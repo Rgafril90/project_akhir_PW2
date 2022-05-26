@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home</title>
+    <title>Roti Enak</title>
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
     <link
         href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic,900,900italic&amp;subset=latin,latin-ext"
@@ -49,8 +49,8 @@
                         </div>
                         <div class="topbar-menu right-menu">
                             <ul>
-                                <li class="menu-item"><a title="Register or Login" href="login.html">Login</a></li>
-                                <li class="menu-item"><a title="Register or Login" href="register.html">Register</a>
+                                <li class="menu-item"><a title="Register or Login" href="login.html">Masuk</a></li>
+                                <li class="menu-item"><a title="Register or Login" href="register.html">Daftar</a>
                                 </li>
                                 <li class="menu-item lang-menu menu-item-has-children parent">
                                     <a title="English" href="#"><span class="img label-before"><img
@@ -80,6 +80,7 @@
                             <div class="wrap-search-form">
                                 <form action="#" id="form-search-top" name="form-search-top">
                                     <input type="text" name="search" value="" placeholder="Search here...">
+
                                     <button form="form-search-top" type="button"><i class="fa fa-search"
                                             aria-hidden="true"></i></button>
                                     <div class="wrap-list-cate">
@@ -121,11 +122,10 @@
                                 </a>
                             </div>
                             <div class="wrap-icon-section minicart">
-                                <a href="#" class="link-direction">
+                                <a href="{{url ('keranjang') }}" class="nav-link">
                                     <i class="fa fa-shopping-basket" aria-hidden="true"></i>
                                     <div class="left-info">
-                                        <span class="index">4 items</span>
-                                        <span class="title">CART</span>
+                                        <span class="title">Keranjang</span>
                                     </div>
                                 </a>
                             </div>
@@ -141,27 +141,24 @@
                     </div>
                 </div>
 
+                <!-- Navigator -->
                 <div class="primary-nav-section">
                     <div class="container">
                         <ul class="nav primary clone-main-menu" id="mercado_main" data-menuname="Main menu">
                             <li class="menu-item home-icon">
-                                <a href="index.html" class="link-term mercado-item-title"><i class="fa fa-home"
-                                        aria-hidden="true"></i></a>
+                                <a href="{{url ('stock') }}" class="nav-link"><i class="fa fa-home"></i></a>
                             </li>
                             <li class="menu-item">
-                                <a href="about-us.html" class="link-term mercado-item-title">About Us</a>
+                                <a href="{{url ('stock') }}" class="nav-link">Belanja</a>
                             </li>
                             <li class="menu-item">
-                                <a href="shop.html" class="link-term mercado-item-title">Shop</a>
+                                <a href="{{url ('checkout') }}" class="nav-link">Checkout</a>
                             </li>
                             <li class="menu-item">
-                                <a href="cart.html" class="link-term mercado-item-title">Cart</a>
+                                <a href="{{url ('contactus') }}" class="nav-link">Contact Us</a>
                             </li>
                             <li class="menu-item">
-                                <a href="checkout.html" class="link-term mercado-item-title">Checkout</a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="contact-us.html" class="link-term mercado-item-title">Contact Us</a>
+                                <a href="{{url ('tentang') }}" class="nav-link">About Us</a>
                             </li>
                         </ul>
                     </div>
@@ -171,118 +168,11 @@
         </div>
     </header>
 
-    <main id="main">
-        <div class="container">
+    <section class="content">
 
-            <!--MAIN SLIDE-->
-            <div class="wrap-main-slide">
-                <div class="slide-carousel owl-carousel style-nav-1" data-items="1" data-loop="1" data-nav="true"
-                    data-dots="false">
-                    <div class="item-slide">
-                        <img src="{{ asset('assets/images/main-slider-1-1.jpg') }}" alt="" class="img-slide">
-                        <div class="slide-info slide-1">
-                            <h2 class="f-title">Kid Smart <b>Watches</b></h2>
-                            <span class="subtitle">Compra todos tus productos Smart por internet.</span>
-                            <p class="sale-info">Only price: <span class="price">$59.99</span></p>
-                            <a href="#" class="btn-link">Shop Now</a>
-                        </div>
-                    </div>
-                    <div class="item-slide">
-                        <img src="{{ asset('assets/images/main-slider-1-2.jpg') }}" alt="" class="img-slide">
-                        <div class="slide-info slide-2">
-                            <h2 class="f-title">Extra 25% Off</h2>
-                            <span class="f-subtitle">On online payments</span>
-                            <p class="discount-code">Use Code: #FA6868</p>
-                            <h4 class="s-title">Get Free</h4>
-                            <p class="s-subtitle">TRansparent Bra Straps</p>
-                        </div>
-                    </div>
-                    <div class="item-slide">
-                        <img src="{{ asset('assets/images/main-slider-1-3.jpg') }}" alt="" class="img-slide">
-                        <div class="slide-info slide-3">
-                            <h2 class="f-title">Great Range of <b>Exclusive Furniture Packages</b></h2>
-                            <span class="f-subtitle">Exclusive Furniture Packages to Suit every need.</span>
-                            <p class="sale-info">Stating at: <b class="price">$225.00</b></p>
-                            <a href="#" class="btn-link">Shop Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        @yield ('content')
 
-            <!--Latest Products-->
-            <div class="wrap-show-advance-info-box style-1">
-                <h3 class="title-box">Latest Products</h3>
-                <div class="wrap-top-banner">
-                    <a href="#" class="link-banner banner-effect-2">
-                        <figure><img src="{{ asset('assets/images/digital-electronic-banner.jpg') }}" width=""
-                                height="240" alt="">
-                        </figure>
-                    </a>
-                </div>
-
-                <div class="product product-style-2 equal-elem ">
-                    <div class="product-thumnail">
-                        <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                            <figure><img src="{{ asset('assets/images/products/digital_04.jpg') }}" width="80"
-                                    height=" 800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                            </figure>
-                        </a>
-                        <div class="group-flash">
-                            <span class="flash-item new-label">new</span>
-                        </div>
-                        <div class="wrap-btn">
-                            <a href="#" class="function-link">quick view</a>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <a href="#" class="product-name"><span>Radiant-360 R6 Wireless
-                                Omnidirectional Speaker [White]</span></a>
-                        <div class="wrap-price"><span class="product-price">$250.00</span></div>
-                    </div>
-                </div>
-
-                <div class="product product-style-2 equal-elem ">
-                    <div class="product-thumnail">
-                        <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                            <figure><img src="{{ asset('assets/images/products/digital_17.jpg') }}" width="80"
-                                    height=" 800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                            </figure>
-                        </a>
-                        <div class="group-flash">
-                            <span class="flash-item sale-label">sale</span>
-                        </div>
-                        <div class="wrap-btn">
-                            <a href="#" class="function-link">quick view</a>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <a href="#" class="product-name"><span>Radiant-360 R6 Wireless
-                                Omnidirectional Speaker [White]</span></a>
-                        <div class="wrap-price"><ins>
-                                <p class="product-price">$168.00</p>
-                            </ins> <del>
-                                <p class="product-price">$250.00</p>
-                            </del></div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        </div>
-        </div>
-        </div>
-        </div>
-
-
-        </div>
-        </div>
-        </div>
-        </div>
-
-        </div>
-
-    </main>
+    </section>
 
     <footer id="footer">
         <div class="wrap-footer-content footer-style-1">
@@ -341,16 +231,15 @@
                                         <ul>
                                             <li>
                                                 <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                                <p class="contact-txt">45 Grand Central Terminal New York,NY 1017 United
-                                                    State USA</p>
+                                                <p class="contact-txt">Jalan Rajawali,Kota Palembang</p>
                                             </li>
                                             <li>
                                                 <i class="fa fa-phone" aria-hidden="true"></i>
-                                                <p class="contact-txt">(+123) 456 789 - (+123) 666 888</p>
+                                                <p class="contact-txt">(+62) 878 0003 7118 - (+62) 801 1818 1818</p>
                                             </li>
                                             <li>
                                                 <i class="fa fa-envelope" aria-hidden="true"></i>
-                                                <p class="contact-txt">Contact@yourcompany.com</p>
+                                                <p class="contact-txt">Contact@byptra.com</p>
                                             </li>
                                         </ul>
                                     </div>
@@ -365,20 +254,7 @@
                                 <div class="item-content">
                                     <div class="wrap-hotline-footer">
                                         <span class="desc">Call Us toll Free</span>
-                                        <b class="phone-number">(+123) 456 789 - (+123) 666 888</b>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="wrap-footer-item footer-item-second">
-                                <h3 class="item-header">Sign up for newsletter</h3>
-                                <div class="item-content">
-                                    <div class="wrap-newletter-footer">
-                                        <form action="#" class="frm-newletter" id="frm-newletter">
-                                            <input type="email" class="input-email" name="email" value=""
-                                                placeholder="Enter your email address">
-                                            <button class="btn-submit">Subscribe</button>
-                                        </form>
+                                        <b class="phone-number">(+62) 878 0003 7118 - (+62) 801 1818 1818</b>
                                     </div>
                                 </div>
                             </div>
@@ -388,30 +264,15 @@
                         <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12 box-twin-content ">
                             <div class="row">
                                 <div class="wrap-footer-item twin-item">
-                                    <h3 class="item-header">My Account</h3>
-                                    <div class="item-content">
-                                        <div class="wrap-vertical-nav">
-                                            <ul>
-                                                <li class="menu-item"><a href="#" class="link-term">My Account</a></li>
-                                                <li class="menu-item"><a href="#" class="link-term">Brands</a></li>
-                                                <li class="menu-item"><a href="#" class="link-term">Gift
-                                                        Certificates</a></li>
-                                                <li class="menu-item"><a href="#" class="link-term">Affiliates</a></li>
-                                                <li class="menu-item"><a href="#" class="link-term">Wish list</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
                                 </div>
+
                                 <div class="wrap-footer-item twin-item">
                                     <h3 class="item-header">Infomation</h3>
                                     <div class="item-content">
                                         <div class="wrap-vertical-nav">
                                             <ul>
-                                                <li class="menu-item"><a href="#" class="link-term">Contact Us</a></li>
-                                                <li class="menu-item"><a href="#" class="link-term">Returns</a></li>
-                                                <li class="menu-item"><a href="#" class="link-term">Site Map</a></li>
-                                                <li class="menu-item"><a href="#" class="link-term">Specials</a></li>
-                                                <li class="menu-item"><a href="#" class="link-term">Order History</a>
+                                                <li class="menu-item"><a href="#" class="link-term">Contact Us</a>
+                                                </li>
                                                 </li>
                                             </ul>
                                         </div>

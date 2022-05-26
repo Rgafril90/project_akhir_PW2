@@ -17,8 +17,27 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/pembeli', function () {
-
-    return view('pembeli.index', ["pembeli" => ["Nur Rahmat", "f paris"]]);
+    Route::get('/stock', function () {
+        return view('stock.index');
     
-    });
+        });
+
+    Route::get('/tentang', function () {
+        return view('tentang.index');
+        
+        });
+
+    Route::get('/keranjang', function () {
+        return view('keranjang.index');
+            
+        });
+
+    Route::get('/contactus', function () {
+        return view('contactus.index');
+                
+        });
+    Route::get('/checkout', function () {
+        return view('checkout.index');
+                    
+        });
+

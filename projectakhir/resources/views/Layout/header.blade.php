@@ -9,5 +9,4 @@
 </head>
 
 <body>
-    <h1> {{ $kampus}} </h1>
     <hr>

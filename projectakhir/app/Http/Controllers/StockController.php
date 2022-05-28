@@ -15,6 +15,8 @@ class StockController extends Controller
     public function index()
     {
         //
+        $stock = stock::all();
+        return view('stock.index')->with('stock', $stock);
     }
 
     /**
@@ -25,6 +27,8 @@ class StockController extends Controller
     public function create()
     {
         //
+        $stock = stock::all();
+        return view('stock.create')->with('stock', $stock);
     }
 
     /**
@@ -35,8 +39,21 @@ class StockController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // 1. validasi input data kosong
+        $validateData = $request->validate([
+            'nama_roti'  => 'required',
+            'Rasa_roti' => 'required'
+        ]);
+
+        // 2. simpan
+        $stock = new stock();
+        $stock->nama_roti  = $validateData['nama_roti'];
+        $stock->Rasa_roti = $validateData['Rasa_roti'];
+
+        $stock->save(); // simpan ke tabel prodis
+        return redirect()->route('stock.index'); // redirect ke prodi.index
     }
+
 
     /**
      * Display the specified resource.
@@ -47,6 +64,7 @@ class StockController extends Controller
     public function show(stock $stock)
     {
         //
+        return view('stock.show')->with('stock', $stock);
     }
 
     /**
@@ -58,6 +76,9 @@ class StockController extends Controller
     public function edit(stock $stock)
     {
         //
+        $stock = stock::all();
+        return view('stock.edit')->with('stock', $stock)->with('stock', $stock);
+
     }
 
     /**
@@ -70,6 +91,17 @@ class StockController extends Controller
     public function update(Request $request, stock $stock)
     {
         //
+        // 1. validasi input data kosong
+        $validateData = $request->validate([
+            'nama_roti'  => 'required',
+            'Rasa_roti' => 'required'
+        ]);
+
+        // 2. simpan perubahan
+        Prodi::where('id', $stock->id)->update($validateData);
+        $request->session()->flash('info', "Data Stock berhasil diubah");
+        return redirect()->route('stock.index'); // redirect ke prodi.index
+
     }
 
     /**

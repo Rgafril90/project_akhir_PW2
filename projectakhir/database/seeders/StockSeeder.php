@@ -3,9 +3,10 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\stock;
 use Illuminate\Database\Seeder;
 
-class stock extends Seeder
+class StockSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,5 +16,11 @@ class stock extends Seeder
     public function run()
     {
         //
+        stock::create(
+            [
+                'nama_roti' => 'roti borgil',
+                'Rasa_roti' => 'Rasa Coklat'
+            ]
+            );
     }
 }

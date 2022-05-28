@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StockController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,19 +14,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-    Route::get('/stock', function () {
-        return view('stock.index');
-    
+    Route::get('/', function () {
+        return view('belanja.index');
         });
 
     Route::get('/tentang', function () {
         return view('tentang.index');
         
         });
+
+        Route::resource('stock', StockController::class );
+
 
     Route::get('/keranjang', function () {
         return view('keranjang.index');

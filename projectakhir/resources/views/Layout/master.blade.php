@@ -83,29 +83,6 @@
 
                                     <button form="form-search-top" type="button"><i class="fa fa-search"
                                             aria-hidden="true"></i></button>
-                                    <div class="wrap-list-cate">
-                                        <input type="hidden" name="product-cate" value="0" id="product-cate">
-                                        <a href="#" class="link-control">All Category</a>
-                                        <ul class="list-cate">
-                                            <li class="level-0">All Category</li>
-                                            <li class="level-1">-Electronics</li>
-                                            <li class="level-2">Batteries & Chargens</li>
-                                            <li class="level-2">Headphone & Headsets</li>
-                                            <li class="level-2">Mp3 Player & Acessories</li>
-                                            <li class="level-1">-Smartphone & Table</li>
-                                            <li class="level-2">Batteries & Chargens</li>
-                                            <li class="level-2">Mp3 Player & Headphones</li>
-                                            <li class="level-2">Table & Accessories</li>
-                                            <li class="level-1">-Electronics</li>
-                                            <li class="level-2">Batteries & Chargens</li>
-                                            <li class="level-2">Headphone & Headsets</li>
-                                            <li class="level-2">Mp3 Player & Acessories</li>
-                                            <li class="level-1">-Smartphone & Table</li>
-                                            <li class="level-2">Batteries & Chargens</li>
-                                            <li class="level-2">Mp3 Player & Headphones</li>
-                                            <li class="level-2">Table & Accessories</li>
-                                        </ul>
-                                    </div>
                                 </form>
                             </div>
                         </div>
@@ -146,10 +123,13 @@
                     <div class="container">
                         <ul class="nav primary clone-main-menu" id="mercado_main" data-menuname="Main menu">
                             <li class="menu-item home-icon">
-                                <a href="{{url ('stock') }}" class="nav-link"><i class="fa fa-home"></i></a>
+                                <a href="{{url ('') }}" class="nav-link"><i class="fa fa-home"></i></a>
                             </li>
-                            <li class="menu-item">
-                                <a href="{{url ('stock') }}" class="nav-link">Belanja</a>
+                            <li class="menu-item current ">
+                                <a href="{{url ('') }}" class="nav-link ">Belanja</a>
+                            </li>
+                            <li class="menu-item current ">
+                                <a href="{{url ('stock') }}" class="nav-link ">Stock</a>
                             </li>
                             <li class="menu-item">
                                 <a href="{{url ('checkout') }}" class="nav-link">Checkout</a>
@@ -362,6 +342,26 @@
     <script src="{{ asset('assets/js/jquery.countdown.min.js') }}"></script>
     <script src="{{ asset('assets/js/jquery.sticky.js') }}"></script>
     <script src="{{ asset('assets/js/functions.js') }}"></script>
+
+    <script>
+        $(function () {
+        $("#example1").DataTable({
+          "responsive": true, "lengthChange": false, "autoWidth": false,
+          "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+        $('#example2').DataTable({
+          "paging": true,
+          "lengthChange": true,
+          "searching": true,
+          "ordering": true,
+          "info": true,
+          "autoWidth": false,
+          "responsive": true,
+        });
+        $('.select2').select2()
+      });
+    </script>
+
 </body>
 
 </html>

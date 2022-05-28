@@ -20,6 +20,7 @@
             </button>
         </div> --}}
     </div>
+
     <div class="card-body">
         <table class="table">
             <thead>
@@ -36,19 +37,22 @@
                 <td>{{ $item->nama_roti }}</td>
                 <td>{{ $item->Rasa_roti }}</td>
 
-                <td>
+                {{-- <td>
                     <a href="{{ url('stock/' . $item->id) }}" class="btn btn-sm btn-primary">Tampil</a>
                     <a href="{{ url('stock/' . $item->id . '/edit') }}" class="btn btn-sm btn-warning">Ubah</a>
-                </td>
+                </td> --}}
 
 
                 </tr>
                 @endforeach
             </tbody>
         </table>
+    </div>
 
-
+    <div class="card-footer">
     </div>
 
 
-    @endsection
+</div>
+
+@endsection

@@ -42,13 +42,13 @@ class StockController extends Controller
         // 1. validasi input data kosong
         $validateData = $request->validate([
             'nama_roti'  => 'required',
-            'Rasa_roti' => 'required'
+            'rasa_roti' => 'required'
         ]);
 
         // 2. simpan
         $stock = new stock();
         $stock->nama_roti  = $validateData['nama_roti'];
-        $stock->Rasa_roti = $validateData['Rasa_roti'];
+        $stock->Rasa_roti = $validateData['rasa_roti'];
 
         $stock->save(); // simpan ke tabel prodis
         return redirect()->route('stock.index'); // redirect ke prodi.index

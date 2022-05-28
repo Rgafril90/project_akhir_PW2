@@ -23,7 +23,7 @@
             @csrf
 
             <div class="form-group">
-                <label for="nama_prodi">Nama Roti</label>
+                <label for="nama_roti">Nama Roti</label>
                 <input type="text" class="form-control" name="nama_roti" placeholder="Enter nama roti">
 
                 @error('nama_roti')
@@ -32,7 +32,7 @@
             </div>
 
             <div class="form-group">
-                <label for="nama_prodi">Rasa Roti</label>
+                <label for="Rasa_roti">Rasa Roti</label>
                 <input type="text" class="form-control" name="rasa_roti" placeholder="Enter rasa roti">
 
                 @error('rasa_roti')

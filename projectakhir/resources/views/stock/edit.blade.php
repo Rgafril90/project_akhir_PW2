@@ -23,7 +23,7 @@
 
             <div class="form-group">
                 <label for="nama_prodi">Nama Roti</label>
-                <input type="text" class="form-control" name="nama_prodi" placeholder="Enter nama program studi"
+                <input type="text" class="form-control" name="nama_roti" placeholder="Enter nama roti"
                     value="{{ old('nama_roti') ?? $stock->nama_roti }}">
 
                 @error('nama_roti')
@@ -33,13 +33,19 @@
 
             <div class="form-group">
                 <label for="nama_prodi">Nama Roti</label>
-                <input type="text" class="form-control" name="nama_prodi" placeholder="Enter nama program studi"
-                    value="{{ old('Rasa_roti') ?? $stock->Rasa_roti }}">
+                <input type="text" class="form-control" name="rasa_roti" placeholder="Enter rasa roti"
+                    value="{{ old('rasa_roti') ?? $stock->Rasa_roti }}">
 
-                @error('Rasa_roti')
+                @error('rasa_roti')
                 <div class="text-danger">{{ $message }}</div>
                 @enderror
             </div>
+
+            {{-- @foreach ($fakultas as $item)
+            <option value="{{ $item->id }}" {{ $item->id == $prodi->fakultas_id ? 'selected' : null }}> {{
+                $item->nama_fakultas }}
+            </option>
+            @endforeach --}}
 
             <button type="submit" class="btn btn-primary">Simpan</button>
         </form>

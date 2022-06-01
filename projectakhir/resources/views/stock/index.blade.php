@@ -22,6 +22,13 @@
     </div>
 
     <div class="card-body">
+
+        @if (session()->has('info'))
+        <div class="alert alert-success">
+            {{ session()->get('info') }}
+        </div>
+        @endif
+
         <table class="table">
             <thead>
                 <tr>
@@ -37,10 +44,10 @@
                 <td>{{ $item->nama_roti }}</td>
                 <td>{{ $item->Rasa_roti }}</td>
 
-                {{-- <td>
+                <td>
                     <a href="{{ url('stock/' . $item->id) }}" class="btn btn-sm btn-primary">Tampil</a>
                     <a href="{{ url('stock/' . $item->id . '/edit') }}" class="btn btn-sm btn-warning">Ubah</a>
-                </td> --}}
+                </td>
 
 
                 </tr>

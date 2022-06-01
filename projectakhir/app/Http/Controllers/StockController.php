@@ -51,7 +51,7 @@ class StockController extends Controller
         $stock->Rasa_roti = $validateData['rasa_roti'];
 
         $stock->save(); // simpan ke tabel prodis
-        return redirect()->route('stock.index'); // redirect ke prodi.index
+        return redirect()->route('stock.index'); 
     }
 
 
@@ -76,8 +76,8 @@ class StockController extends Controller
     public function edit(stock $stock)
     {
         //
-        $stock = stock::all();
-        return view('stock.edit')->with('stock', $stock)->with('stock', $stock);
+        // $stock = stock::all(); ditambahkan jika memakai dua data/ dua model
+        return view('stock.edit')->with('stock', $stock);
 
     }
 
@@ -94,13 +94,13 @@ class StockController extends Controller
         // 1. validasi input data kosong
         $validateData = $request->validate([
             'nama_roti'  => 'required',
-            'Rasa_roti' => 'required'
+            'rasa_roti' => 'required'
         ]);
 
         // 2. simpan perubahan
-        Prodi::where('id', $stock->id)->update($validateData);
+        stock::where('id', $stock->id)->update($validateData);
         $request->session()->flash('info', "Data Stock berhasil diubah");
-        return redirect()->route('stock.index'); // redirect ke prodi.index
+        return redirect()->route('stock.index'); 
 
     }
 

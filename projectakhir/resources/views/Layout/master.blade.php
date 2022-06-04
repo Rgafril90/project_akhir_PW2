@@ -53,13 +53,14 @@
                                 <li class="menu-item"><a title="Register or Login" href="register.html">Daftar</a>
                                 </li>
                                 <li class="menu-item lang-menu menu-item-has-children parent">
-                                    <a title="English" href="#"><span class="img label-before"><img
-                                                src="assets/images/lang-en.png" alt="lang-en"></span>Indonesia<i
-                                            class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                    <a title="Indonesian" href="#"><span class="img label-before"><img
+                                                src="assets/images/benderaIndonesia.jpg"
+                                                alt="lang-en"></span>Indonesia<i class="fa fa-angle-down"
+                                            aria-hidden="true"></i></a>
                             </ul>
                             </li>
                             <li class="menu-item menu-item-has-children parent">
-                                <a title="Dollar (USD)" href="#">RUPIAH (RP) </a>
+                                <a title="Dollar (USD)" href="#">DOLLAR($)</a>
                             </li>
                             </ul>
                         </div>
@@ -99,7 +100,7 @@
                                 </a>
                             </div>
                             <div class="wrap-icon-section minicart">
-                                <a href="{{url ('keranjang') }}" class="nav-link">
+                                <a href="{{ url('keranjang') }}" class="nav-link">
                                     <i class="fa fa-shopping-basket" aria-hidden="true"></i>
                                     <div class="left-info">
                                         <span class="title">Keranjang</span>
@@ -123,22 +124,22 @@
                     <div class="container">
                         <ul class="nav primary clone-main-menu" id="mercado_main" data-menuname="Main menu">
                             <li class="menu-item home-icon">
-                                <a href="{{url ('') }}" class="nav-link"><i class="fa fa-home"></i></a>
+                                <a href="{{ url('') }}" class="nav-link"><i class="fa fa-home"></i></a>
                             </li>
                             <li class="menu-item current ">
-                                <a href="{{url ('') }}" class="nav-link ">Belanja</a>
+                                <a href="{{ url('') }}" class="nav-link ">Belanja</a>
                             </li>
                             <li class="menu-item current ">
-                                <a href="{{url ('stock') }}" class="nav-link ">Stock</a>
+                                <a href="{{ url('stock') }}" class="nav-link ">Stock</a>
                             </li>
                             <li class="menu-item">
-                                <a href="{{url ('checkout') }}" class="nav-link">Checkout</a>
+                                <a href="{{ url('checkout') }}" class="nav-link">Checkout</a>
                             </li>
                             <li class="menu-item">
-                                <a href="{{url ('contactus') }}" class="nav-link">Contact Us</a>
+                                <a href="{{ url('contactus') }}" class="nav-link">Contact Us</a>
                             </li>
                             <li class="menu-item">
-                                <a href="{{url ('tentang') }}" class="nav-link">About Us</a>
+                                <a href="{{ url('tentang') }}" class="nav-link">About Us</a>
                             </li>
                         </ul>
                     </div>
@@ -251,7 +252,8 @@
                                     <div class="item-content">
                                         <div class="wrap-vertical-nav">
                                             <ul>
-                                                <li class="menu-item"><a href="#" class="link-term">Contact Us</a>
+                                                <li class="menu-item"><a href="#" class="link-term">Contact
+                                                        Us</a>
                                                 </li>
                                                 </li>
                                             </ul>
@@ -290,8 +292,8 @@
                                                         class="fa fa-pinterest" aria-hidden="true"></i></a></li>
                                             <li><a href="#" class="link-to-item" title="instagram"><i
                                                         class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                            <li><a href="#" class="link-to-item" title="vimeo"><i class="fa fa-vimeo"
-                                                        aria-hidden="true"></i></a></li>
+                                            <li><a href="#" class="link-to-item" title="vimeo"><i
+                                                        class="fa fa-vimeo" aria-hidden="true"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -315,12 +317,15 @@
                 <div class="coppy-right-item item-right">
                     <div class="wrap-nav horizontal-nav">
                         <ul>
-                            <li class="menu-item"><a href="about-us.html" class="link-term">About us</a></li>
-                            <li class="menu-item"><a href="privacy-policy.html" class="link-term">Privacy Policy</a>
+                            <li class="menu-item"><a href="about-us.html" class="link-term">About us</a>
+                            </li>
+                            <li class="menu-item"><a href="privacy-policy.html" class="link-term">Privacy
+                                    Policy</a>
                             </li>
                             <li class="menu-item"><a href="terms-conditions.html" class="link-term">Terms &
                                     Conditions</a></li>
-                            <li class="menu-item"><a href="return-policy.html" class="link-term">Return Policy</a>
+                            <li class="menu-item"><a href="return-policy.html" class="link-term">Return
+                                    Policy</a>
                             </li>
                         </ul>
                     </div>
@@ -333,8 +338,7 @@
     </footer>
 
     <script src="{{ asset(' assets/js/jquery-1.12.4.minb8ff.js?ver=1.12.4') }}"></script>
-    <script src="{{ asset('assets/js/jquery-ui-1.12.4.minb8ff.js?ver=1.12.4') }}">
-    </script>
+    <script src="{{ asset('assets/js/jquery-ui-1.12.4.minb8ff.js?ver=1.12.4') }}"></script>
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('assets/js/jquery.flexslider.js') }}"></script>
     <script src="{{ asset('assets/js/chosen.jquery.min.js') }}"></script>
@@ -344,22 +348,24 @@
     <script src="{{ asset('assets/js/functions.js') }}"></script>
 
     <script>
-        $(function () {
-        $("#example1").DataTable({
-          "responsive": true, "lengthChange": false, "autoWidth": false,
-          "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-        $('#example2').DataTable({
-          "paging": true,
-          "lengthChange": true,
-          "searching": true,
-          "ordering": true,
-          "info": true,
-          "autoWidth": false,
-          "responsive": true,
+        $(function() {
+            $("#example1").DataTable({
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
+                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": true,
+                "searching": true,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+            });
+            $('.select2').select2()
         });
-        $('.select2').select2()
-      });
     </script>
 
 </body>

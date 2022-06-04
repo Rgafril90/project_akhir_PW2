@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Roti Enak</title>
+    <title>R & B Bakery</title>
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
     <link
         href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic,900,900italic&amp;subset=latin,latin-ext"
@@ -91,13 +91,6 @@
                         <!--Keranjang-->
                         <div class="wrap-icon right-section">
                             <div class="wrap-icon-section wishlist">
-                                <a href="#" class="link-direction">
-                                    <i class="fa fa-heart" aria-hidden="true"></i>
-                                    <div class="left-info">
-                                        <span class="index">0 item</span>
-                                        <span class="title">Wishlist</span>
-                                    </div>
-                                </a>
                             </div>
                             <div class="wrap-icon-section minicart">
                                 <a href="{{ url('keranjang') }}" class="nav-link">

@@ -42,13 +42,22 @@ class StockController extends Controller
         // 1. validasi input data kosong
         $validateData = $request->validate([
             'nama_roti'  => 'required',
-            'rasa_roti' => 'required'
+            'rasa_roti' => 'required',
+            'foto' => 'required|file|image|max:5000'
         ]);
+
+        //extensi
+        $ext = $request->foto->getClientOriginalExtension();
+        //ubah nama
+        $rename_file = "foto-".time().".".$ext;
+        //upload file
+        $request->foto->storeAs('public',$rename_file);
 
         // 2. simpan
         $stock = new stock();
         $stock->nama_roti  = $validateData['nama_roti'];
         $stock->Rasa_roti = $validateData['rasa_roti'];
+        $stock->foto      = $rename_file;
 
         $stock->save(); // simpan ke tabel prodis
         return redirect()->route('stock.index'); 
@@ -94,7 +103,8 @@ class StockController extends Controller
         // 1. validasi input data kosong
         $validateData = $request->validate([
             'nama_roti'  => 'required',
-            'rasa_roti' => 'required'
+            'rasa_roti' => 'required',
+            'foto'      => 'required|file|image|max:50000'
         ]);
 
         // 2. simpan perubahan
@@ -113,5 +123,8 @@ class StockController extends Controller
     public function destroy(stock $stock)
     {
         //
+        $stock->delete();
+        return redirect()->route('stock.index')->with("info", "stock $stock->nama_roti berhasil dihapus");
+
     }
 }

@@ -19,7 +19,7 @@
     </div> --}}
 
     <div class="card-body">
-        <form action="{{ route('stock.store') }}" method="POST">
+        <form action="{{ route('stock.store') }}" method="POST" enctype=" multipart/form-data">
             @csrf
 
             <div class="form-group">
@@ -36,6 +36,15 @@
                 <input type="text" class="form-control" name="rasa_roti" placeholder="Enter rasa roti">
 
                 @error('rasa_roti')
+                <div class="text-danger">{{ $message }}</div>
+                @enderror
+            </div>
+
+            <div class="form-group">
+                <label for="foto">Foto Product</label>
+                <input type="file" class="form-control" name="foto">
+
+                @error('foto')
                 <div class="text-danger">{{ $message }}</div>
                 @enderror
             </div>

@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class stock extends Model
 {
     use HasFactory;
+
+    public function belanja(){
+        return $this->belongsTo('App\Models\belanja');
+    }
 }

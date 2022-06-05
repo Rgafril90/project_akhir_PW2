@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\stock;
+use App\Models\belanja;
 use Illuminate\Http\Request;
 
 class StockController extends Controller
@@ -73,7 +74,8 @@ class StockController extends Controller
     public function show(stock $stock)
     {
         //
-        return view('stock.show')->with('stock', $stock);
+        $belanja = belanja::all();
+        return view('stock.show')->with('belanja', $belanja);
     }
 
     /**

@@ -129,10 +129,10 @@
                                 <a href="{{ url('checkout') }}" class="nav-link">Checkout</a>
                             </li>
                             <li class="menu-item">
-                                <a href="{{ url('contactus') }}" class="nav-link">Contact Us</a>
+                                <a href="{{ url('contactus') }}" class="nav-link">Hubungi</a>
                             </li>
                             <li class="menu-item">
-                                <a href="{{ url('tentang') }}" class="nav-link">About Us</a>
+                                <a href="{{ url('tentang') }}" class="nav-link">Tentang</a>
                             </li>
                         </ul>
                     </div>
@@ -157,24 +157,24 @@
                         <li class="fc-info-item">
                             <i class="fa fa-truck" aria-hidden="true"></i>
                             <div class="wrap-left-info">
-                                <h4 class="fc-name">Free Shipping</h4>
-                                <p class="fc-desc">Free On Oder Over $99</p>
+                                <h4 class="fc-name">Gratis Ongkir</h4>
+                                <p class="fc-desc">Minimal Belanja 10 pcs Roti</p>
                             </div>
 
                         </li>
                         <li class="fc-info-item">
                             <i class="fa fa-recycle" aria-hidden="true"></i>
                             <div class="wrap-left-info">
-                                <h4 class="fc-name">Guarantee</h4>
-                                <p class="fc-desc">30 Days Money Back</p>
+                                <h4 class="fc-name">Jaminan</h4>
+                                <p class="fc-desc">30 Hari Uang Kembali</p>
                             </div>
 
                         </li>
                         <li class="fc-info-item">
                             <i class="fa fa-credit-card-alt" aria-hidden="true"></i>
                             <div class="wrap-left-info">
-                                <h4 class="fc-name">Safe Payment</h4>
-                                <p class="fc-desc">Safe your online payment</p>
+                                <h4 class="fc-name">Pembayaran Aman</h4>
+                                <p class="fc-desc">Bisa Via Online</p>
                             </div>
 
                         </li>
@@ -209,11 +209,11 @@
                                             </li>
                                             <li>
                                                 <i class="fa fa-phone" aria-hidden="true"></i>
-                                                <p class="contact-txt">(+62) 878 0003 7118 - (+62) 801 1818 1818</p>
+                                                <p class="contact-txt">(+62) 123 5678 9012 - (+62) 801 1818 1818</p>
                                             </li>
                                             <li>
                                                 <i class="fa fa-envelope" aria-hidden="true"></i>
-                                                <p class="contact-txt">Contact@byptra.com</p>
+                                                <p class="contact-txt">Contact@B&R_Bakery.com</p>
                                             </li>
                                         </ul>
                                     </div>
@@ -228,7 +228,7 @@
                                 <div class="item-content">
                                     <div class="wrap-hotline-footer">
                                         <span class="desc">Call Us toll Free</span>
-                                        <b class="phone-number">(+62) 878 0003 7118 - (+62) 801 1818 1818</b>
+                                        <b class="phone-number">(+62) 123 5678 9012 - (+62) 801 1818 1818</b>
                                     </div>
                                 </div>
                             </div>

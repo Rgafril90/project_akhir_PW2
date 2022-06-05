@@ -111,8 +111,8 @@
                         <label>
                             <input type="radio" class="hidden" name="showup" id="shoup4" value="shoup4">
                             <span class="check-box"></span>
-                            <span class='function-name'>Tujuan</span>
-                            <span class="desc">Agar Dapat mempermudah pelanggan dalam membeli Roti</span>
+                            <span class='function-name'>Motto</span>
+                            <span class="desc">Kepuasan Pelanggan prioritas kami</span>
                         </label>
                     </div>
                 </div>

@@ -74,8 +74,7 @@ class StockController extends Controller
     public function show(stock $stock)
     {
         //
-        $belanja = belanja::all();
-        return view('stock.show')->with('belanja', $belanja);
+        return view('stock.show')->with('stock', $stock);
     }
 
     /**

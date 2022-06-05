@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\belanja;
+use App\Models\stock;
 use Illuminate\Http\Request;
 
 class BelanjaController extends Controller
@@ -15,6 +16,9 @@ class BelanjaController extends Controller
     public function index()
     {
         //
+        $belanja = belanja::all();
+        return view('belanja.index')->with('belanja',$belanja);
+
     }
 
     /**

@@ -64,7 +64,7 @@
                                 </div>
                                 <div class="product-info">
                                     {{-- @foreach($stock as $item)
-                                    <a class="product-name"><span>{{$item->nama_roti}}</span></a>
+                                    <a class="product-name"><span>{{$item->stock->nama_roti}}</span></a>
                                     @endforeach --}}
                                     <a href="#" class="product-name"><span>Roti Rasa Bagel</span></a>
                                     <div class="wrap-price"><span class="product-price">$250.00</span></div>

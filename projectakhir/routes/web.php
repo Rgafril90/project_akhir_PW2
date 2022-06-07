@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StockController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,33 +13,14 @@ use App\Http\Controllers\StockController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
-    Route::get('/', function () {
-        return view('belanja.index');
-        });
+Route::get('/dashboard', function () {
+    return view('dashboardnew');
+})->middleware(['auth'])->name('dashboard');
 
-    Route::get('/tentang', function () {
-        return view('tentang.index');
-        
-        });
+Route::resource('stock', StockController::class );
 
-        Route::resource('stock', StockController::class );
-
-
-    Route::get('/keranjang', function () {
-        return view('keranjang.index');
-            
-        });
-
-    Route::get('/contactus', function () {
-        return view('contactus.index');
-                
-        });
-    Route::get('/checkout', function () {
-        return view('checkout.index');
-                    
-        });
-
+require __DIR__.'/auth.php';

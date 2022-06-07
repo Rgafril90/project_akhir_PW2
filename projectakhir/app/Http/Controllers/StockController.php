@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\stock;
-use App\Models\belanja;
 use Illuminate\Http\Request;
 
 class StockController extends Controller

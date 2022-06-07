@@ -13,9 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('stocks', function (Blueprint $table) {
-            //
-            $table->string('foto')->after('Rasa_roti');
+        Schema::create('rotis', function (Blueprint $table) {
+            $table->id();
+            $table->string('nama_roti');
+            $table->string('rasa_roti');
+            $table->string('foto');
+            $table->timestamps();
         });
     }
 
@@ -26,9 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('stocks', function (Blueprint $table) {
-            //
-            $table->dropColumn('foto');
-        });
+        Schema::dropIfExists('rotis');
     }
 };

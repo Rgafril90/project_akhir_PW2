@@ -9,8 +9,12 @@ class belanja extends Model
 {
     use HasFactory;
 
-    public function stock(){
-        return $this->belongsTo('App\Models\stock');
+    public function detailbelanja(){
+        return $this->belongsTo('App\Models\detail_belanja');
+    }
+
+    public function pembeli(){
+        return $this->belongsTo('App\Models\pembeli');
     }
 
 }

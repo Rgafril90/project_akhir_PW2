@@ -20,29 +20,32 @@
         </div> --}}
     </div>
 
+    {{-- @if (session()->has('info'))
+    <div class="alert alert-success">
+        {{ session()->get('info') }}
+    </div>
+    @endif --}}
+
     <div class="card-body">
-
-        @if (session()->has('info'))
-        <div class="alert alert-success">
-            {{ session()->get('info') }}
-        </div>
-        @endif
-
         <table class="table">
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Gambar</th>
+                    {{-- <th>Gambar</th> --}}
                     <th>Nama Roti</th>
-                    <th>Detail Roti</th>
+                    <th>Rasa Roti</th>
+                    <th> Jumlah </th>
+                    <th> Tanggal </th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($stock as $item)
                 <td>{{ $item->id }}</td>
-                <td><img src="{{ asset('storage/'.$item->foto) }}" alt="Logo" width="100px"></td>
-                <td>{{ $item->nama_roti }}</td>
-                <td>{{ $item->Rasa_roti }}</td>
+                {{-- <td><img src="{{ asset('storage/'.$item->foto) }}" alt="Logo" width="100px"></td> --}}
+                <td>{{ $item->roti->nama_roti }}</td>
+                <td>{{ $item->roti->Rasa_roti }}</td>
+                <td>{{ $item->jumlah }}</td>
+                <td>{{ $item->tanggal }}</td>
 
                 <td>
                     <a href="{{ url('stock/' . $item->id) }}" class="btn btn-sm btn-primary">Tampil</a>
@@ -60,7 +63,7 @@
     <div class="card-footer">
     </div>
 
-    {{-- modal hapus --}}
+    {{-- modal hapus
     <div id="deleteModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content bg-danger">
@@ -83,7 +86,7 @@
                 </form>
             </div>
         </div>
-    </div>
+    </div> --}}
 
 </div>
 

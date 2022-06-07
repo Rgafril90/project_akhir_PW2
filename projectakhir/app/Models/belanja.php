@@ -14,7 +14,7 @@ class belanja extends Model
     }
 
     public function pembeli(){
-        return $this->belongsTo('App\Models\pembeli');
+        return $this->hasMany('App\Models\pembeli');
     }
 
 }

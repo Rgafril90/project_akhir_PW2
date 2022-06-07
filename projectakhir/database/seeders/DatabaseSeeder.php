@@ -16,13 +16,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-        pembeli::create(
-            [
-                'Nama' => 'Riganda Saputra',
-                'alamat'=> 'Griya Albaria 1',
-                'Gmail' => 'rigandas990@gmail.com',
-                'No_telp' => '081279084442'
-            ]
-            );
+        
     }
 }

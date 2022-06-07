@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\stock;
+use App\Models\roti;
 use Illuminate\Http\Request;
 
 class StockController extends Controller
@@ -27,8 +28,8 @@ class StockController extends Controller
     public function create()
     {
         //
-        $stock = stock::all();
-        return view('stock.create')->with('stock', $stock);
+        $roti = roti::all();
+        return view('stock.create')->with('roti',$roti);
     }
 
     /**
@@ -43,21 +44,23 @@ class StockController extends Controller
         $validateData = $request->validate([
             'nama_roti'  => 'required',
             'rasa_roti' => 'required',
-            'foto' => 'required|file|image|max:5000'
+            'jumlah' => 'required',
+            'tanggal' => 'required'
         ]);
 
         //extensi
-        $ext = $request->foto->getClientOriginalExtension();
+        // $ext = $request->foto->getClientOriginalExtension();
         //ubah nama
-        $rename_file = "foto-".time().".".$ext;
+        // $rename_file = "foto-".time().".".$ext;
         //upload file
-        $request->foto->storeAs('public',$rename_file);
+        // $request->foto->storeAs('public',$rename_file);
 
         // 2. simpan
         $stock = new stock();
-        $stock->nama_roti  = $validateData['nama_roti'];
-        $stock->Rasa_roti = $validateData['rasa_roti'];
-        $stock->foto      = $rename_file;
+        $stock->roti->nama_roti  = $validateData['nama_roti'];
+        $stock->roti->rasa_roti  = $validateData['rasa_roti'];
+        $stock->jumlah = $validateData['jumlah'];
+        $stock -> tanggal = $validateData['tanggal'];
 
         $stock->save(); // simpan ke tabel prodis
         return redirect()->route('stock.index'); 
@@ -104,7 +107,8 @@ class StockController extends Controller
         $validateData = $request->validate([
             'nama_roti'  => 'required',
             'rasa_roti' => 'required',
-            'foto'      => 'required|file|image|max:50000'
+            'jumlah' => 'required',
+            'tanggal' => 'required'
         ]);
 
         // 2. simpan perubahan

@@ -1,6 +1,6 @@
 @extends('Layout.master')
 
-@section('title', 'Stock')
+@section('title', 'Tambah Data')
 
 @section('content')
 
@@ -23,29 +23,53 @@
             @csrf
 
             <div class="form-group">
-                <label for="nama_roti">Nama Roti</label>
-                <input type="text" class="form-control" name="nama_roti" placeholder="Enter nama roti">
+                <label for="roti_id">Nama Roti</label>
 
-                @error('nama_roti')
+                <select name="roti_nama_id" class="form-group">
+                    <option value="">Pilih Nama Roti</option>
+                    @foreach($roti as $item)
+                    <option value="{{ $item->id }}">{{$item->nama_roti}}
+                    </option>
+                    @endforeach
+                </select>
+
+                @error('roti_nama_id')
+                <div class="text-danger">{{$message}}</div>
+                @enderror
+            </div>
+
+            <div class="form-group">
+                <label for="roti_id">Rasa Roti</label>
+
+                <select name="roti_rasa_id" class="form-group">
+                    <option value="">pilih Rasa Roti</option>
+                    @foreach($roti as $item)
+                    <option value="{{ $item->id}}">{{ $item->rasa_roti}}
+                    </option>
+                    @endforeach
+                </select>
+
+                @error('roti_rasa_id')
+                <div class="text-danger">{{$message}}</div>
+                @enderror
+            </div>
+
+
+            <div class="form-group">
+                <label for="jumlah"> Jumlah </label>
+                <input type="text" class="form-control" name="jumlah" placeholder="Enter jumlah roti">
+
+                @error('jumlah')
                 <div class="text-danger">{{ $message }}</div>
                 @enderror
             </div>
 
             <div class="form-group">
-                <label for="Rasa_roti">Rasa Roti</label>
-                <input type="text" class="form-control" name="rasa_roti" placeholder="Enter rasa roti">
+                <label for="tanggal"> Tanggal </label>
+                <input type="date" name="tanggal" placeholder="Enter Tanggal">
 
-                @error('rasa_roti')
-                <div class="text-danger">{{ $message }}</div>
-                @enderror
-            </div>
-
-            <div class="form-group">
-                <label for="foto">Foto Product</label>
-                <input type="file" class="form-control" name="foto">
-
-                @error('foto')
-                <div class="text-danger">{{ $message }}</div>
+                @error('tanggal')
+                <div class="text-danger">{{$message}}</div>
                 @enderror
             </div>
 

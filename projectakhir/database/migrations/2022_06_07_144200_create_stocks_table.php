@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('stocks', function (Blueprint $table) {
             $table->id();
             $table->foreignId('roti_id')-> constrained()->onDelete('restrict')->onUpdate('restrict');
-            $table->string('jumlah');
+            $table->integer('jumlah');
             $table->date('tanggal');
             $table->timestamps();
         });

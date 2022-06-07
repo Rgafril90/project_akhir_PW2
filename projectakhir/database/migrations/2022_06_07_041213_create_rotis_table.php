@@ -15,9 +15,8 @@ return new class extends Migration
     {
         Schema::create('rotis', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_roti');
-            $table->string('rasa_roti');
-            $table->string('foto');
+            $table->string('nama_roti')->nullable();
+            $table->string('rasa_roti')->nullable();
             $table->timestamps();
         });
     }

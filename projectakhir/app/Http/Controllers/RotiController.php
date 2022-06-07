@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\roti;
+use App\Models\stock;
 use Illuminate\Http\Request;
 
 class RotiController extends Controller

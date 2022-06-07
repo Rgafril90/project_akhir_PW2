@@ -22,10 +22,10 @@
                         <figure><img src="assets/images/products/digital_18.jpg" alt=""></figure>
                     </div>
                     <div class="product-name">
-                        <a class="link-to-product" href="#">Radiant-360 R6 Wireless Omnidirectional Speaker [White]</a>
+                        <a class="link-to-product" href="#">Roti Bagel</a>
                     </div>
                     <div class="price-field produtc-price">
-                        <p class="price">$256.00</p>
+                        <p class="price">$10.00</p>
                     </div>
                     <div class="quantity">
                         <div class="quantity-input">
@@ -35,7 +35,7 @@
                         </div>
                     </div>
                     <div class="price-field sub-total">
-                        <p class="price">$256.00</p>
+                        <p class="price">$10.00</p>
                     </div>
                     <div class="delete">
                         <a href="#" class="btn btn-delete" title="">
@@ -49,10 +49,10 @@
                         <figure><img src="assets/images/products/digital_20.jpg" alt=""></figure>
                     </div>
                     <div class="product-name">
-                        <a class="link-to-product" href="#">Radiant-360 R6 Wireless Omnidirectional Speaker [White]</a>
+                        <a class="link-to-product" href="#">Roti Croissant</a>
                     </div>
                     <div class="price-field produtc-price">
-                        <p class="price">$256.00</p>
+                        <p class="price">$10.00</p>
                     </div>
                     <div class="quantity">
                         <div class="quantity-input">
@@ -62,7 +62,7 @@
                         </div>
                     </div>
                     <div class="price-field sub-total">
-                        <p class="price">$256.00</p>
+                        <p class="price">$10.00</p>
                     </div>
                     <div class="delete">
                         <a href="#" class="btn btn-delete" title="">

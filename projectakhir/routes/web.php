@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StockController;
+use App\Http\Controllers\HubungiController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,5 +23,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::resource('stock', StockController::class );
+
+Route::resource('hubungi', HubungiController::class );
 
 require __DIR__.'/auth.php';

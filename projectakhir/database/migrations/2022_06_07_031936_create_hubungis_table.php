@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('hubungis', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
+            $table->string('email');
+            $table->string('noHp');
+            $table->string('komentar');
             $table->timestamps();
         });
     }

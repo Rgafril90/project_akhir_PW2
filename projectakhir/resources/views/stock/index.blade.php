@@ -42,8 +42,8 @@
                 @foreach ($stock as $item)
                 <td>{{ $item->id }}</td>
                 {{-- <td><img src="{{ asset('storage/'.$item->foto) }}" alt="Logo" width="100px"></td> --}}
-                <td>{{ $item->roti->nama_roti }}</td>
-                <td>{{ $item->roti->Rasa_roti }}</td>
+                <td>{{ $item->roti->nama_roti}}</td>
+                <td>{{ $item->roti->rasa_roti }}</td>
                 <td>{{ $item->jumlah }}</td>
                 <td>{{ $item->tanggal }}</td>
 
@@ -63,7 +63,7 @@
     <div class="card-footer">
     </div>
 
-    {{-- modal hapus
+    {{-- modal hapus --}}
     <div id="deleteModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content bg-danger">
@@ -86,7 +86,7 @@
                 </form>
             </div>
         </div>
-    </div> --}}
+    </div>
 
 </div>
 

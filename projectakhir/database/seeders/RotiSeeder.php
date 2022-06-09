@@ -22,6 +22,7 @@ class RotiSeeder extends Seeder
         ]);
 
         roti::create([
+            'nama_roti' => 'Roti Begel',
             'rasa_roti' => ' Coklat'
         ]);
     }

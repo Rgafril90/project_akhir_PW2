@@ -129,7 +129,7 @@
                                 <a href="{{ url('checkout') }}" class="nav-link">Checkout</a>
                             </li>
                             <li class="menu-item">
-                                <a href="{{ url('contactus') }}" class="nav-link">Hubungi</a>
+                                <a href="{{ url('hubungi') }}" class="nav-link">Hubungi Kami </a>
                             </li>
                             <li class="menu-item">
                                 <a href="{{ url('tentang') }}" class="nav-link">Tentang</a>
@@ -285,8 +285,8 @@
                                                         class="fa fa-pinterest" aria-hidden="true"></i></a></li>
                                             <li><a href="#" class="link-to-item" title="instagram"><i
                                                         class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                            <li><a href="#" class="link-to-item" title="vimeo"><i
-                                                        class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+                                            <li><a href="#" class="link-to-item" title="vimeo"><i class="fa fa-vimeo"
+                                                        aria-hidden="true"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>

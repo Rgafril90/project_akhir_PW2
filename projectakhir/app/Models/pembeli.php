@@ -9,7 +9,7 @@ class pembeli extends Model
 {
     use HasFactory;
 
-    public function belanja(){
-        return $this->belongsTo('App\Models\belanja');
-    }
+    // public function belanja(){
+    //     return $this->belongsTo('App\Models\belanja');
+    // }
 }

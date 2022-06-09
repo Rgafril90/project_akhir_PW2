@@ -15,6 +15,8 @@ class HubungiController extends Controller
     public function index()
     {
         //
+        $hubungi = hubungi::all();
+        return view('hubungi.index')->with('hubungi',$hubungi);
     }
 
     /**
@@ -25,6 +27,8 @@ class HubungiController extends Controller
     public function create()
     {
         //
+        // $hubungi = hubungi::all();
+        // return view('hubungi.index')->with('hubungi',$hubungi);
     }
 
     /**
@@ -35,7 +39,25 @@ class HubungiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //validate input data kosong
+        $validateData = $request->validate([
+            'nama'=>'required',
+            'email'=>'required',
+            'noHp' => 'required',
+            'komentar' => 'required'
+        ]);
+
+        //simpan
+        $hubungi = new hubungi();
+        $hubungi -> nama = $validateData['nama'];
+        $hubungi -> email = $validateData['email'];
+        $hubungi -> noHp = $validateData['noHp'];
+        $hubungi -> komentar = $validateData['komentar'];
+
+        $hubungi->save();
+        return redirect()->route('hubungi.index');
+
+
     }
 
     /**

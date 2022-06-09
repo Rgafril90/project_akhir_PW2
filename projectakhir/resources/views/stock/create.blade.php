@@ -25,20 +25,20 @@
             <div class="form-group">
                 <label for="roti_id">Nama Roti</label>
 
-                <select name="roti_nama_id" class="form-group">
+                <select name="roti_id" class="form-group">
                     <option value="">Pilih Nama Roti</option>
                     @foreach($roti as $item)
-                    <option value="{{ $item->id }}">{{$item->nama_roti}}
+                    <option value="{{ $item->id }}">{{$item->nama_roti}} {{$item->rasa_roti}}
                     </option>
                     @endforeach
                 </select>
 
-                @error('roti_nama_id')
+                @error('roti_id')
                 <div class="text-danger">{{$message}}</div>
                 @enderror
             </div>
 
-            <div class="form-group">
+            {{-- <div class="form-group">
                 <label for="roti_id">Rasa Roti</label>
 
                 <select name="roti_rasa_id" class="form-group">
@@ -52,7 +52,7 @@
                 @error('roti_rasa_id')
                 <div class="text-danger">{{$message}}</div>
                 @enderror
-            </div>
+            </div> --}}
 
 
             <div class="form-group">

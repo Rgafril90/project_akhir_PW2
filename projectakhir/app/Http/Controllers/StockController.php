@@ -42,8 +42,7 @@ class StockController extends Controller
     {
         // 1. validasi input data kosong
         $validateData = $request->validate([
-            'nama_roti'  => 'required',
-            'rasa_roti' => 'required',
+            'roti_id' => 'required',
             'jumlah' => 'required',
             'tanggal' => 'required'
         ]);
@@ -57,8 +56,7 @@ class StockController extends Controller
 
         // 2. simpan
         $stock = new stock();
-        $stock->roti->nama_roti  = $validateData['nama_roti'];
-        $stock->roti->rasa_roti  = $validateData['rasa_roti'];
+        $stock -> roti_id = $validateData['roti_id'];
         $stock->jumlah = $validateData['jumlah'];
         $stock -> tanggal = $validateData['tanggal'];
 

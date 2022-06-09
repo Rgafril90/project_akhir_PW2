@@ -4,8 +4,9 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\hubungi;
 
-class ContactUs extends Seeder
+class HubungiSeeder extends Seeder
 {
     /**
      * Run the database seeds.

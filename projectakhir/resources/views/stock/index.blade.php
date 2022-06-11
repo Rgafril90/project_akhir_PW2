@@ -20,11 +20,11 @@
         </div> --}}
     </div>
 
-    {{-- @if (session()->has('info'))
+    @if (session()->has('info'))
     <div class="alert alert-success">
         {{ session()->get('info') }}
     </div>
-    @endif --}}
+    @endif
 
     <div class="card-body">
         <table class="table">
@@ -50,8 +50,15 @@
                 <td>
                     <a href="{{ url('stock/' . $item->id) }}" class="btn btn-sm btn-primary">Tampil</a>
                     <a href="{{ url('stock/' . $item->id . '/edit') }}" class="btn btn-sm btn-warning">Ubah</a>
-                    <button class="btn btn-sm btn-danger btn-hapus" data-id="{{ $item->id }}" data-toggle="modal"
-                        data-target="#deleteModal">Hapus</button>
+                    {{-- <button class="btn btn-sm btn-danger btn-hapus" data-id="{{ $item->id }}"
+                        data-namastock="{{ $item->nama_stock }}" data-toggle="modal"
+                        data-target="#deleteModal">Hapus</button> --}}
+
+                    <a action="{{url('stock/'.$item->id)}}" method="POST" id="formDelete">
+                        @method('DELETE')
+                        @csrf
+                        <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
+                    </a>
 
                 </td>
                 </tr>
@@ -64,7 +71,7 @@
     </div>
 
     {{-- modal hapus --}}
-    <div id="deleteModal" class="modal fade" role="dialog">
+    {{-- <div id="deleteModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content bg-danger">
                 <form action="" method="POST" id="formDelete">
@@ -86,12 +93,12 @@
                 </form>
             </div>
         </div>
-    </div>
+    </div> --}}
 
 </div>
 
 
-<script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
+<script src="{{asset('assets/js/jquery/jquery.min.js') }}"></script>
 <script>
     // jika tombol hapus ditekan, generate alamat URL untuk proses hapus
         $('.btn-hapus').click(function() {

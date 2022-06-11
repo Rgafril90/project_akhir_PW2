@@ -86,8 +86,8 @@ class StockController extends Controller
     public function edit(stock $stock)
     {
         //
-        // $stock = stock::all(); ditambahkan jika memakai dua data/ dua model
-        return view('stock.edit')->with('stock', $stock);
+        $roti = roti::all();
+        return view('stock.edit')->with('stock', $stock)->with('roti', $roti);
 
     }
 
@@ -103,8 +103,7 @@ class StockController extends Controller
         //
         // 1. validasi input data kosong
         $validateData = $request->validate([
-            'nama_roti'  => 'required',
-            'rasa_roti' => 'required',
+            'roti_id' => 'required',
             'jumlah' => 'required',
             'tanggal' => 'required'
         ]);
@@ -126,7 +125,7 @@ class StockController extends Controller
     {
         //
         $stock->delete();
-        return redirect()->route('stock.index')->with("info", "stock $stock->nama_roti berhasil dihapus");
+        return redirect()->route('stock.index')->with("info", "stock $stock->roti_id berhasil dihapus");
 
     }
 }

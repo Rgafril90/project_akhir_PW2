@@ -1,6 +1,6 @@
 @extends('layout.master')
 
-@section('title', 'Program Studi')
+@section('title', 'Edit Barang')
 
 @section('content')
 <div class="card">
@@ -22,30 +22,57 @@
             @csrf
 
             <div class="form-group">
-                <label for="nama_prodi">Nama Roti</label>
-                <input type="text" class="form-control" name="nama_roti" placeholder="Enter nama roti"
-                    value="{{ old('nama_roti') ?? $stock->nama_roti }}">
+                <label for="roti_id">Nama Roti</label>
+                <select name="roti_id" class="form-control select2">
+                    <option value="">Ubah Nama Roti</option>
+                    @foreach ($roti as $item)
+                    <option value="{{ $item->id }}" {{ $item->id == $stock->roti_id ? 'selected' : null }}> {{
+                        $item->nama_roti }}
+                    </option>
+                    @endforeach
+                </select>
 
-                @error('nama_roti')
+                @error('roti_id')
                 <div class="text-danger">{{ $message }}</div>
                 @enderror
             </div>
 
             <div class="form-group">
-                <label for="nama_prodi">Nama Roti</label>
-                <input type="text" class="form-control" name="rasa_roti" placeholder="Enter rasa roti"
-                    value="{{ old('rasa_roti') ?? $stock->Rasa_roti }}">
+                <label for="roti_id">Rasa Roti</label>
+                <select name="roti_id" class="form-control select2">
+                    <option value="">Ubah Rasa Roti</option>
+                    @foreach ($roti as $item)
+                    <option value="{{ $item->id }}" {{ $item->id == $stock->roti_id ? 'selected' : null }}> {{
+                        $item->rasa_roti }}
+                    </option>
+                    @endforeach
+                </select>
 
-                @error('rasa_roti')
+                @error('roti_id')
                 <div class="text-danger">{{ $message }}</div>
                 @enderror
             </div>
 
-            {{-- @foreach ($fakultas as $item)
-            <option value="{{ $item->id }}" {{ $item->id == $prodi->fakultas_id ? 'selected' : null }}> {{
-                $item->nama_fakultas }}
-            </option>
-            @endforeach --}}
+            <div class="form-group">
+                <label for="jumlah">Jumlah</label>
+                <input type="text" class="form-control" name="jumlah" placeholder="Ubah Jumlah Product"
+                    value="{{ old('jumlah') ?? $stock->jumlah }}">
+
+                @error('nama_prodi')
+                <div class="text-danger">{{ $message }}</div>
+                @enderror
+            </div>
+
+            <div class="form-group">
+                <label for="tanggal">Nama Studi</label>
+                <input type="date" class="form-control" name="tanggal" placeholder="Ubah Tanggal Product"
+                    value="{{ old('tanggal') ?? $stock->tanggal }}">
+
+                @error('tanggal')
+                <div class="text-danger">{{ $message }}</div>
+                @enderror
+            </div>
+
 
             <button type="submit" class="btn btn-primary">Simpan</button>
         </form>

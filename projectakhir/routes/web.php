@@ -24,7 +24,8 @@ Route::get('/dashboard', function () {
 
 Route::resource('stock', StockController::class );
 
-Route::resource('hubungi', HubungiController::class );
+Route::resource('hubungi', HubungiController::class );      
+
 
 Route::get('/tentang', function () {
     return view('tentang.index');

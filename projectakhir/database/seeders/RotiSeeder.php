@@ -17,13 +17,48 @@ class RotiSeeder extends Seeder
     {
         //
         roti::create([
-            'nama_roti' => 'Roti Begel',
+            'nama_roti' => 'Roti Bagel',
             'rasa_roti' => ' Keju'
         ]);
 
         roti::create([
-            'nama_roti' => 'Roti Begel',
+            'nama_roti' => 'Roti Bagel',
             'rasa_roti' => ' Coklat'
+        ]);
+
+        roti::create([
+            'nama_roti' => 'Roti Bagel',
+            'rasa_roti' => ' Srikaya'
+        ]);
+
+        roti::create([
+            'nama_roti' => 'Roti Bagel',
+            'rasa_roti' => ' Kelapa'
+        ]);
+
+        roti::create([
+            'nama_roti' => 'Roti Begel',
+            'rasa_roti' => ' Nanas'
+        ]);
+
+        roti::create([
+            'nama_roti' => 'Roti Bagel',
+            'rasa_roti' => ' Meses Campur'
+        ]);
+
+        roti::create([
+            'nama_roti' => 'Roti Bagel',
+            'rasa_roti' => ' Stroberi'
+        ]);
+
+        roti::create([
+            'nama_roti' => 'Roti Bagel',
+            'rasa_roti' => ' Melon'
+        ]);
+
+        roti::create([
+            'nama_roti' => 'Roti Bagel',
+            'rasa_roti' => ' Meses Coklat'
         ]);
     }
 }

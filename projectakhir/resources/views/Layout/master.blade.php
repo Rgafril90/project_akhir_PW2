@@ -120,7 +120,7 @@
                                 <a href="{{ url('') }}" class="nav-link"><i class="fa fa-home"></i></a>
                             </li>
                             <li class="menu-item current ">
-                                <a href="{{ url('') }}" class="nav-link ">Belanja</a>
+                                <a href="{{ url('belanja') }}" class="nav-link ">Belanja</a>
                             </li>
                             <li class="menu-item current ">
                                 <a href="{{ url('stock') }}" class="nav-link ">Stock</a>

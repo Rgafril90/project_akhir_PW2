@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('detail_belanjas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('belanja_id') -> constrained()->onDelete('restrict') -> onUpdate('restrict');
+            $table->foreignId('belanja_id');
             $table->foreignId('roti_id') -> constrained()->onDelete('restrict') -> onUpdate('restrict');
             $table->string('jumlah');
             $table->timestamps();

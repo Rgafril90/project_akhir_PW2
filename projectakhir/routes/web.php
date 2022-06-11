@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\HubungiController;
+use App\Http\Controllers\BelanjaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,8 +25,9 @@ Route::get('/dashboard', function () {
 
 Route::resource('stock', StockController::class );
 
-Route::resource('hubungi', HubungiController::class );      
+Route::resource('hubungi', HubungiController::class );
 
+Route::resource('belanja', BelanjaController::class);
 
 Route::get('/tentang', function () {
     return view('tentang.index');

@@ -60,5 +60,6 @@ class RotiSeeder extends Seeder
             'nama_roti' => 'Roti Bagel',
             'rasa_roti' => ' Meses Coklat'
         ]);
+        
     }
 }

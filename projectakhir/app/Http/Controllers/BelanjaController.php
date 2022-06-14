@@ -18,9 +18,6 @@ class BelanjaController extends Controller
         //
         $belanja = belanja::all();
         return view('belanja.index')->with('belanja',$belanja);
-
-        
-
     }
 
     /**

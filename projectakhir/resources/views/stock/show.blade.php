@@ -22,11 +22,11 @@
         <table class="table">
             <tr>
                 <td>Nama Roti</td>
-                <td>{{ $stock->nama_roti }}</td>
+                <td>{{ $stock->roti->nama_roti }}</td>
             </tr>
             <tr>
                 <td>Rasa Roti</td>
-                <td>{{ $stock->Rasa_roti }}</td>
+                <td>{{ $stock->roti->rasa_roti }}</td>
             </tr>
         </table>
     </div>

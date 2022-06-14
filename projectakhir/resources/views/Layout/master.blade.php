@@ -49,8 +49,20 @@
                         </div>
                         <div class="topbar-menu right-menu">
                             <ul>
-                                <li class="menu-item"><a title="Register or Login" href="login.html">Masuk</a></li>
-                                <li class="menu-item"><a title="Register or Login" href="register.html">Daftar</a>
+                                <!-- Authentication -->
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+
+                                    <x-responsive-nav-link :href="route('logout')" onclick="event.preventDefault();
+                                    this.closest('form').submit();">
+                                        {{ __('Log Out') }}
+                                    </x-responsive-nav-link>
+                                </form>
+                                <li>
+
+                                </li>
+                                {{-- <li class="menu-item"><a title="Register or Login" href="login.html">Masuk</a></li>
+                                <li class="menu-item"><a title="Register or Login" href="register.html">Daftar</a> --}}
                                 </li>
                                 <li class="menu-item lang-menu menu-item-has-children parent">
                                     <a title="Indonesian" href="#"><span class="img label-before"><img

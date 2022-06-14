@@ -31,7 +31,7 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    {{-- <th>Gambar</th> --}}
+                    <th>Foto</th>
                     <th>Nama Roti</th>
                     <th>Rasa Roti</th>
                     <th> Jumlah </th>
@@ -41,7 +41,7 @@
             <tbody>
                 @foreach ($stock as $item)
                 <td>{{ $item->id }}</td>
-                {{-- <td><img src="{{ asset('storage/'.$item->foto) }}" alt="Logo" width="100px"></td> --}}
+                <td><img src="{{ asset('storage/'.$item->foto) }}" alt="foto" width="100px"></td>
                 <td>{{ $item->roti->nama_roti}}</td>
                 <td>{{ $item->roti->rasa_roti }}</td>
                 <td>{{ $item->jumlah }}</td>
@@ -54,11 +54,11 @@
                         data-namastock="{{ $item->nama_stock }}" data-toggle="modal"
                         data-target="#deleteModal">Hapus</button> --}}
 
-                    <a action="{{url('stock/'.$item->id)}}" method="POST" id="formDelete">
+                    <form action="{{url('stock/'.$item->id)}}" method="POST" id="formDelete">
                         @method('DELETE')
                         @csrf
-                        <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
-                    </a>
+                        <button type="submit" class="btn btn-outline-light">Ya, Hapus</button>
+                    </form>
 
                 </td>
                 </tr>

@@ -43,24 +43,27 @@ class StockController extends Controller
         // 1. validasi input data kosong
         $validateData = $request->validate([
             'roti_id' => 'required',
+            'foto' => 'required|file|image|max:500000',
             'jumlah' => 'required',
             'tanggal' => 'required'
         ]);
 
         //extensi
-        // $ext = $request->foto->getClientOriginalExtension();
+        $ext = $request->foto->getClientOriginalExtension();
         //ubah nama
-        // $rename_file = "foto-".time().".".$ext;
+        $rename_file = "foto-".time().".".$ext;
         //upload file
-        // $request->foto->storeAs('public',$rename_file);
+        $request->foto->storeAs('public',$rename_file);
 
         // 2. simpan
         $stock = new stock();
         $stock -> roti_id = $validateData['roti_id'];
         $stock->jumlah = $validateData['jumlah'];
         $stock -> tanggal = $validateData['tanggal'];
+        $stock -> foto = $rename_file;
 
         $stock->save(); // simpan ke tabel prodis
+        $request->session()->flash('info', "Data Stock berhasil ditambah");
         return redirect()->route('stock.index'); 
     }
 

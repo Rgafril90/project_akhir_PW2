@@ -13,8 +13,4 @@ class belanja extends Model
         return $this->belongsTo('App\Models\stock');
     }
 
-    // public function pembeli(){
-    //     return $this->belongTo('App\Models\pembeli');
-    // }
-
 }

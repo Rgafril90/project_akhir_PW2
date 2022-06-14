@@ -38,21 +38,7 @@
                 @enderror
             </div>
 
-            {{-- <div class="form-group">
-                <label for="roti_id">Rasa Roti</label>
 
-                <select name="roti_rasa_id" class="form-group">
-                    <option value="">pilih Rasa Roti</option>
-                    @foreach($roti as $item)
-                    <option value="{{ $item->id}}">{{ $item->rasa_roti}}
-                    </option>
-                    @endforeach
-                </select>
-
-                @error('roti_rasa_id')
-                <div class="text-danger">{{$message}}</div>
-                @enderror
-            </div> --}}
 
 
             <div class="form-group">
@@ -69,6 +55,24 @@
                 <input type="date" name="tanggal" placeholder="Enter Tanggal">
 
                 @error('tanggal')
+                <div class="text-danger">{{$message}}</div>
+                @enderror
+            </div>
+
+            <div class="form-group">
+                <label for="foto">Gambar Roti</label>
+                <input type="file" class="form-control" name="foto">
+
+                {{-- <select name="foto" class="form-group">
+                    @foreach($roti as $item)
+                    <input type="file" class="form-control" name="foto">
+                    <option value="{{ $item->id}}">{{ $item->foto}}
+                    </option>
+                    {{ $item->foto}}
+                    @endforeach
+                </select> --}}
+
+                @error('foto')
                 <div class="text-danger">{{$message}}</div>
                 @enderror
             </div>

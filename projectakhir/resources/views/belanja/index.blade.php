@@ -37,66 +37,80 @@
                 <div class="row">
                     <ul class="product-list grid-products equal-container">
                         <!--List 1 -->
-                        <li class="col-lg-4 col-md-6 col-sm-6 col-xs-6 ">
-                            <div class="product product-style-3 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="assets/images/rasa bagel.jpg"
-                                                alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Roti Rasa
-                                            Bagel</span></a>
-                                    <div class="wrap-price"><span class="product-price">$250.00</span></div>
-                                    <a href="#" class="btn add-to-cart">Masukan Ke
-                                        Keranajang</a>
-                                </div>
-                            </div>
-                        </li>
-                        <!--End List 1 -->
 
-                        <!--List 2 -->
-                        <li class="col-lg-4 col-md-6 col-sm-6 col-xs-6 ">
-                            <div class="product product-style-3 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="assets/images/rasa Croissant.jpg"
-                                                alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
-                                </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Roti
-                                            Croissant</span></a>
-                                    <div class="wrap-price"><span class="product-price">$250.00</span></div>
-                                    <a href="#" class="btn add-to-cart">Masukan Ke
-                                        Keranajang</a>
-                                </div>
-                            </div>
-                        </li>
-                        <!--End List 2 -->
+                        <ul class="product-list grid-products equal-container">
+                            <!--List 1 -->
+                            <li class="col-lg-4 col-md-6 col-sm-6 col-xs-6 ">
+                                <div class="product product-style-3 equal-elem ">
+                                    <div class="product-thumnail">
+                                        <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+                                            <figure><img src="assets/images/rasa bagel.jpg"
+                                                    alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
+                                            </figure>
+                                        </a>
+                                    </div>
+                                    <div class="product-info">
+                                        <tbody>
+                                            @foreach ($belanja as $item)
+                                            <td>{{ $item->id }}</td>
+                                            {{-- <td><img src="{{ asset('storage/'.$item->foto) }}" alt="Logo"
+                                                    width="100px">
+                                            </td> --}}
+                                            <td>{{ $item->stock->roti->nama_roti}}</td>
+                                            <td>{{ $item->stock->roti->rasa_roti }}</td>
 
-                        <!--List 3 -->
-                        <li class="col-lg-4 col-md-6 col-sm-6 col-xs-6 ">
-                            <div class="product product-style-3 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="assets/images/rasa mufin.jpg"
-                                                alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        </figure>
-                                    </a>
+                                            </tr>
+                                            @endforeach
+                                        </tbody>
+                                        <a href="#" class="btn add-to-cart">Masukan Ke
+                                            Keranjang</a>
+                                    </div>
                                 </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Roti mufin</span></a>
-                                    <div class="wrap-price"><span class="product-price">$250.00</span></div>
-                                    <a href="#" class="btn add-to-cart">Masukan Ke Keranjang</a>
+                            </li>
+
+                            <!--End List 1 -->
+
+                            {{--
+                            <!--List 2 -->
+                            <li class="col-lg-4 col-md-6 col-sm-6 col-xs-6 ">
+                                <div class="product product-style-3 equal-elem ">
+                                    <div class="product-thumnail">
+                                        <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+                                            <figure><img src="assets/images/rasa Croissant.jpg"
+                                                    alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
+                                            </figure>
+                                        </a>
+                                    </div>
+                                    <div class="product-info">
+                                        <a href="#" class="product-name"><span>Roti
+                                                Croissant</span></a>
+                                        <div class="wrap-price"><span class="product-price">$250.00</span></div>
+                                        <a href="#" class="btn add-to-cart">Masukan Ke
+                                            Keranajang</a>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                    </ul>
-                    <!--End List 3 -->
+                            </li>
+                            <!--End List 2 -->
+
+                            <!--List 3 -->
+                            <li class="col-lg-4 col-md-6 col-sm-6 col-xs-6 ">
+                                <div class="product product-style-3 equal-elem ">
+                                    <div class="product-thumnail">
+                                        <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+                                            <figure><img src="assets/images/rasa mufin.jpg"
+                                                    alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
+                                            </figure>
+                                        </a>
+                                    </div>
+                                    <div class="product-info">
+                                        <a href="#" class="product-name"><span>Roti mufin</span></a>
+                                        <div class="wrap-price"><span class="product-price">$250.00</span></div>
+                                        <a href="#" class="btn add-to-cart">Masukan Ke Keranjang</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <!--End List 3 --> --}}
                 </div>
 
                 <!--Nomor banyak barang -->

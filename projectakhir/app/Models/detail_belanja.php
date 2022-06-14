@@ -9,7 +9,7 @@ class detail_belanja extends Model
 {
     use HasFactory;
     
-    // public function roti(){
-    //     return $this->hasMany('App\Models\roti');
-    // }
+    public function belanja(){
+        return $this->belongsTo('App\Models\belanja');
+    }
 }

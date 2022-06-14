@@ -1,16 +1,16 @@
 @extends('Layout.master')
 
-@section('title','Stock')
+@section('title', 'Stock')
 
 @section('content')
 
-<div class="card">
-    <div class="card-header">
-        <hr>
-        {{-- <h3 class="card-title">@yield('title')</h3> --}}
-        <a href="{{ url('stock/create') }}" class="btn btn-primary">Tambah</a>
+    <div class="card">
+        <div class="card-header">
+            <hr>
+            {{-- <h3 class="card-title">@yield('title')</h3> --}}
+            <a href="{{ url('stock/create') }}" class="btn btn-primary">Tambah</a>
 
-        {{-- <div class="card-tools">
+            {{-- <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                 <i class="fas fa-minus"></i>
             </button>
@@ -18,15 +18,43 @@
                 <i class="fas fa-times"></i>
             </button>
         </div> --}}
-    </div>
+        </div>
 
-    @if (session()->has('info'))
-    <div class="alert alert-success">
-        {{ session()->get('info') }}
-    </div>
-    @endif
+        @if (session()->has('info'))
+            <div class="alert alert-success">
+                {{ session()->get('info') }}
+            </div>
+        @endif
 
-    <div class="card-body">
+
+        <div class="card-body">
+            <li class="col-lg-4 col-md-6 col-sm-6 col-xs-6 ">
+                <div class="product product-style-3 equal-elem ">
+                    <div class="product-roti">
+                        <figure><img src="assets/images/rasa bagel.jpg" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
+                        </figure>
+                        </a>
+                    </div>
+                    <div class="product-info">
+                        <tbody>
+                            @foreach ($stock as $item)
+                                <tr>
+                                    <td>{{ $item->roti->roti_id }}</td>
+                                    <td>{{ $item->roti->nama_roti }}</td>
+                                    <td>{{ $item->roti->rasa_roti }}</td>
+                                    <td>{{ $item->jumlah }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                        <a href="#" class="btn add-to-cart">Masukan Ke
+                            Keranjang</a>
+                    </div>
+                </div>
+            </li>
+        </div>
+
+
+        {{-- <div class="card-body">
         <table class="table">
             <thead>
                 <tr>
@@ -50,9 +78,6 @@
                 <td>
                     <a href="{{ url('stock/' . $item->id) }}" class="btn btn-sm btn-primary">Tampil</a>
                     <a href="{{ url('stock/' . $item->id . '/edit') }}" class="btn btn-sm btn-warning">Ubah</a>
-                    {{-- <button class="btn btn-sm btn-danger btn-hapus" data-id="{{ $item->id }}"
-                        data-namastock="{{ $item->nama_stock }}" data-toggle="modal"
-                        data-target="#deleteModal">Hapus</button> --}}
 
                     <form action="{{url('stock/'.$item->id)}}" method="POST" id="formDelete">
                         @method('DELETE')
@@ -65,13 +90,13 @@
                 @endforeach
             </tbody>
         </table>
-    </div>
+    </div> --}}
 
-    <div class="card-footer">
-    </div>
+        <div class="card-footer">
+        </div>
 
-    {{-- modal hapus --}}
-    {{-- <div id="deleteModal" class="modal fade" role="dialog">
+        {{-- modal hapus --}}
+        {{-- <div id="deleteModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content bg-danger">
                 <form action="" method="POST" id="formDelete">
@@ -95,12 +120,12 @@
         </div>
     </div> --}}
 
-</div>
+    </div>
 
 
-<script src="{{asset('assets/js/jquery/jquery.min.js') }}"></script>
-<script>
-    // jika tombol hapus ditekan, generate alamat URL untuk proses hapus
+    <script src="{{ asset('assets/js/jquery/jquery.min.js') }}"></script>
+    <script>
+        // jika tombol hapus ditekan, generate alamat URL untuk proses hapus
         $('.btn-hapus').click(function() {
             let id = $(this).attr('data-id');
             $('#formDelete').attr('action', '/stock/' + id);
@@ -110,6 +135,6 @@
         $('#formDelete [type="submit"]').click(function() {
             $('#formDelete').submit();
         })
-</script>
+    </script>
 
 @endsection

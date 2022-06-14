@@ -28,97 +28,53 @@
 
 
         <div class="card-body">
-            <li class="col-lg-4 col-md-6 col-sm-6 col-xs-6 ">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 ">
                 <div class="product product-style-3 equal-elem ">
-                    <div class="product-roti">
-                        <figure><img src="assets/images/rasa bagel.jpg" alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                        </figure>
-                        </a>
+                    <div class="row">
                     </div>
-                    <div class="product-info">
-                        <tbody>
-                            @foreach ($stock as $item)
-                                <tr>
-                                    <td>{{ $item->roti->roti_id }}</td>
-                                    <td>{{ $item->roti->nama_roti }}</td>
-                                    <td>{{ $item->roti->rasa_roti }}</td>
-                                    <td>{{ $item->jumlah }}</td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                        <a href="#" class="btn add-to-cart">Masukan Ke
-                            Keranjang</a>
-                    </div>
+                    <tbody>
+                        @foreach ($stock as $item)
+                            <div class="col-3">
+                                <thead>
+                                    <tr>
+                                        <th><img src="assets/images/rasa bagel.jpg"></th>
+
+                                    </tr>
+                                </thead>
+                            </div>
+                            <div class="col-3">
+                    <tbody>
+                        <tr>
+                            <td>{{ $item->roti->nama_roti }}</td>
+                            <td>{{ $item->roti->rasa_roti }}</td>
+                            <td>{{ $item->jumlah }}</td>
+                        </tr>
+                    </tbody>
                 </div>
-            </li>
-        </div>
+                <div class="col-3">
+                    <tfoot>
+                        <tr>
+                            <td><a href="#" class="btn add-to-cart">Masukan Ke
+                                    Keranjang</a></td>
 
-
-        {{-- <div class="card-body">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Foto</th>
-                    <th>Nama Roti</th>
-                    <th>Rasa Roti</th>
-                    <th> Jumlah </th>
-                    <th> Tanggal </th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($stock as $item)
-                <td>{{ $item->id }}</td>
-                <td><img src="{{ asset('storage/'.$item->foto) }}" alt="foto" width="100px"></td>
-                <td>{{ $item->roti->nama_roti}}</td>
-                <td>{{ $item->roti->rasa_roti }}</td>
-                <td>{{ $item->jumlah }}</td>
-                <td>{{ $item->tanggal }}</td>
-
-                <td>
-                    <a href="{{ url('stock/' . $item->id) }}" class="btn btn-sm btn-primary">Tampil</a>
-                    <a href="{{ url('stock/' . $item->id . '/edit') }}" class="btn btn-sm btn-warning">Ubah</a>
-
-                    <form action="{{url('stock/'.$item->id)}}" method="POST" id="formDelete">
-                        @method('DELETE')
-                        @csrf
-                        <button type="submit" class="btn btn-outline-light">Ya, Hapus</button>
-                    </form>
-
-                </td>
-                </tr>
+                        </tr>
+                    </tfoot>
+                </div>
                 @endforeach
-            </tbody>
-        </table>
-    </div> --}}
+                </tbody>
 
-        <div class="card-footer">
-        </div>
-
-        {{-- modal hapus --}}
-        {{-- <div id="deleteModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content bg-danger">
-                <form action="" method="POST" id="formDelete">
-                    @method('DELETE')
-                    @csrf
-                    <div class="modal-header">
-                        <h4 class="modal-title">Konfirmasi Hapus Data </h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        Anda yakin akan menghapus data ini ?
-                    </div>
-                    <div class="modal-footer justify-content-between">
-                        <button type="button" class="btn btn-outline-light" data-dismiss="modal">Batal</button>
-                        <button type="submit" class="btn btn-outline-light">Ya, Hapus</button>
-                    </div>
-                </form>
             </div>
         </div>
-    </div> --}}
+    </div>
+    </div>
+
+
+
+
+    <div class="card-footer">
+    </div>
+
+
 
     </div>
 

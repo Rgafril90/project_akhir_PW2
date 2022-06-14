@@ -52,10 +52,10 @@
                                         <div class="product-info">
                                             <tbody>
                                                 @foreach ($belanja as $item)
-                                                    <td>{{ $item->id }}</td>
-                                                    <td>{{ $item->stock->roti->nama_roti }}</td>
-                                                    <td>{{ $item->stock->roti->rasa_roti }}</td>
-
+                                                    <tr>
+                                                        <td>{{ $item->id }}</td>
+                                                        <td>{{ $item->stock->roti->nama_roti }}</td>
+                                                        <td>{{ $item->stock->roti->rasa_roti }}</td>
                                                     </tr>
                                                 @endforeach
                                             </tbody>

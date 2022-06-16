@@ -49,31 +49,29 @@
                         </div>
                         <div class="topbar-menu right-menu">
                             <ul>
-                                <!-- Authentication -->
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
-
-                                    <x-responsive-nav-link :href="route('logout')" onclick="event.preventDefault();
+                                    <x-responsive-nav-link :href="route('logout')"
+                                        onclick="event.preventDefault();
                                     this.closest('form').submit();">
                                         {{ __('Log Out') }}
                                     </x-responsive-nav-link>
                                 </form>
-                                <li>
 
-                                </li>
+
                                 {{-- <li class="menu-item"><a title="Register or Login" href="login.html">Masuk</a></li>
-                                <li class="menu-item"><a title="Register or Login" href="register.html">Daftar</a> --}}
-                                </li>
+                                <li class="menu-item"><a title="Register or Login" href="register.html">Daftar</a> 
+                                </li> --}}
+
                                 <li class="menu-item lang-menu menu-item-has-children parent">
                                     <a title="Indonesian" href="#"><span class="img label-before"><img
                                                 src="assets/images/benderaIndonesia.jpg"
                                                 alt="lang-en"></span>Indonesia<i class="fa fa-angle-down"
                                             aria-hidden="true"></i></a>
-                            </ul>
-                            </li>
-                            <li class="menu-item menu-item-has-children parent">
-                                <a title="Dollar (USD)" href="#">DOLLAR($)</a>
-                            </li>
+                                </li>
+                                <li class="menu-item menu-item-has-children parent">
+                                    <a title="Dollar (USD)" href="#">DOLLAR($)</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -297,8 +295,8 @@
                                                         class="fa fa-pinterest" aria-hidden="true"></i></a></li>
                                             <li><a href="#" class="link-to-item" title="instagram"><i
                                                         class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                            <li><a href="#" class="link-to-item" title="vimeo"><i class="fa fa-vimeo"
-                                                        aria-hidden="true"></i></a></li>
+                                            <li><a href="#" class="link-to-item" title="vimeo"><i
+                                                        class="fa fa-vimeo" aria-hidden="true"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>

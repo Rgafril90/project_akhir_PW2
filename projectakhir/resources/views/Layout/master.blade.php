@@ -48,7 +48,7 @@
                             </ul>
                         </div>
                         <div class="topbar-menu right-menu">
-                            <ul>
+                            <ul class="fa-solid fa-right-from-bracket">
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
                                     <x-responsive-nav-link :href="route('logout')"
@@ -116,6 +116,19 @@
                                     <span></span>
                                     <span></span>
                                 </a>
+                            </div>
+                        </div>
+
+
+
+                        <!--Nama User dan Email User-->
+                        <img src="{{ asset('assets/images/LogoUser1.jpg') }}" alt="mercado">
+                        <div class="wrap-icon right-section">
+                            <div class="info">
+                                {{-- <i class="fa-solid fa-user"></i> --}}
+                                <a href="#" class="d-block">
+                                    {{ Auth::user()->name }}</a>
+                                <p class="bg-success text-white">{{ Auth::user()->email }}</p>
                             </div>
                         </div>
 

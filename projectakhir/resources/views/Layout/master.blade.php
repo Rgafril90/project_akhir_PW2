@@ -47,13 +47,18 @@
                                 </li>
                             </ul>
                         </div>
+
+
                         <div class="topbar-menu right-menu">
+
                             <ul class="fa-solid fa-right-from-bracket">
+
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
                                     <x-responsive-nav-link :href="route('logout')"
                                         onclick="event.preventDefault();
                                     this.closest('form').submit();">
+                                        <img src="{{ asset('assets/images/LogoLogOut.jpg') }}" alt="mercado">
                                         {{ __('Log Out') }}
                                     </x-responsive-nav-link>
                                 </form>
@@ -122,13 +127,15 @@
 
 
                         <!--Nama User dan Email User-->
-                        <img src="{{ asset('assets/images/LogoUser1.jpg') }}" alt="mercado">
                         <div class="wrap-icon right-section">
-                            <div class="info">
+                            <div class="menu-item lang-menu menu-item-has-children parent">
                                 {{-- <i class="fa-solid fa-user"></i> --}}
-                                <a href="#" class="d-block">
-                                    {{ Auth::user()->name }}</a>
-                                <p class="bg-success text-white">{{ Auth::user()->email }}</p>
+                                <p href="#" class="d-block"> <img
+                                        src="{{ asset('assets/images/LogoUser.jpg') }}" alt="mercado">
+                                    {{ Auth::user()->name }}
+                                    <br>{{ Auth::user()->email }}
+                                </p>
+                                {{-- <p class="bg-success text-white">{{ Auth::user()->email }}</p> --}}
                             </div>
                         </div>
 

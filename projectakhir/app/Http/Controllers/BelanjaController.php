@@ -15,9 +15,13 @@ class BelanjaController extends Controller
      */
     public function index()
     {
-        //
+        
         $belanja = belanja::all();
-        return view('belanja.index')->with('belanja',$belanja);
+        $stock = stock::all();
+        return view('belanja.index')->with('belanja',$belanja)->with('stock',$stock);
+
+        // $stock = stock::all();
+        // return view('stock.index')->with('stock', $stock);
     }
 
     /**
@@ -60,7 +64,7 @@ class BelanjaController extends Controller
      */
     public function edit(belanja $belanja)
     {
-        //
+        
     }
 
     /**

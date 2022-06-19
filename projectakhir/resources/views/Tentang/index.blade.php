@@ -82,6 +82,13 @@
                         TTL : Selapan,19 Oktober 1999
                     </p>
                 </div>
+                <!--Nomor Halaman -->
+                <div class="wrap-pagination-info">
+                    <ul class="page-numbers">
+                        <li><span class="page-number-item current">6</span></li>
+                        <li class="result-count">Menampilkan Slide Tentang R And B Bakery</li>
+                    </ul>
+                </div>
             </div>
 
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">

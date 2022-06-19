@@ -51,7 +51,7 @@
 
                         <div class="topbar-menu right-menu">
 
-                            <ul class="fa-solid fa-right-from-bracket">
+                            <ul href="#" class="btn add-to-cart">
 
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
@@ -129,7 +129,6 @@
                         <!--Nama User dan Email User-->
                         <div class="wrap-icon right-section">
                             <div class="menu-item lang-menu menu-item-has-children parent">
-                                {{-- <i class="fa-solid fa-user"></i> --}}
                                 <p href="#" class="d-block"> <img
                                         src="{{ asset('assets/images/LogoUser.jpg') }}" alt="mercado">
                                     {{ Auth::user()->name }}

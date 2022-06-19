@@ -27,23 +27,6 @@
                     <div class="wrap-shop-control">
 
                         <h1 class="shop-title">Pilihan Rasa</h1>
-                        {{-- <div class="row">
-                            @foreach ($belanja as $stock)
-                                <div class=col-lg-4>
-                                    <a href="detail.html" title="Roti bagel">
-                                        <figure><img src="assets/images/rasa bagel.jpg" alt="Roti Bagel">
-                                        </figure>
-                                    </a>
-                                    <div>{{ $stock->roti->nama_roti }}
-                                        {{ $stock->roti->rasa_roti }} {{ $stock->jumlah }}
-                                        <br>{{ $stock->tanggal }}
-                                    </div>
-                                    <a href="#" class="btn add-to-cart">Masukan Ke
-                                        Keranjang</a>
-                                </div>
-                            @endforeach
-                        </div> --}}
-
 
                     </div>
                     <!--end wrap shop control-->
@@ -74,12 +57,11 @@
                     </div>
 
 
-                    <!--Nomor banyak barang -->
+                    <!--Nomor Halaman -->
                     <div class="wrap-pagination-info">
                         <ul class="page-numbers">
-                            <li><span class="page-number-item current">1</span></li>
-                            <li class="result-count">Menampilkan Slide Pertama
-                            <li>
+                            <li><span class="page-number-item current">2</span></li>
+                            <li class="result-count">Menampilkan Slide Belanja</li>
                         </ul>
                     </div>
 

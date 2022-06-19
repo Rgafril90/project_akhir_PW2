@@ -15,7 +15,7 @@
             </ul>
         </div>
 
-        <<<<<<< HEAD <div class="row">
+        <div class="row">
             <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12 main-content-area">
                 <div class="banner-shop">
                     <a href="#" class="banner-link">
@@ -129,8 +129,8 @@
 
 
             </div>
-    </div>
-    <!-- brand widget-->
+        </div>
+        <!-- brand widget-->
 
     </div>
     <!--end sitebar-->

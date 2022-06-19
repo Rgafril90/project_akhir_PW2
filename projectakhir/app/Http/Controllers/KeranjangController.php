@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\detail_belanja;
-use App\Models\belanja;
+use App\Models\keranjang;
+use App\Models\stock;
 use Illuminate\Http\Request;
 
-class DetailBelanjaController extends Controller
+class KeranjangController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,8 @@ class DetailBelanjaController extends Controller
     public function index()
     {
         //
-        
+        $keranjang = keranjang::all();
+        return view('keranjang.index')->with('keranjang',$keranjang);
     }
 
     /**
@@ -27,6 +28,8 @@ class DetailBelanjaController extends Controller
     public function create()
     {
         //
+        $stock = stock::all();
+        return view('keranjang.create')->with('stock',$stock);
     }
 
     /**
@@ -37,16 +40,29 @@ class DetailBelanjaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validate data 
+        $validateData = $request->validate([
+            'stock_id' => 'required',
+            'jumlah' => 'required'
+        ]);
+
+        //simpan data 
+        $keranjang = new keranjang();
+        $keranjang->stock_id = $validateData['stock_id'];
+        $keranjang->jumlah = $validateData['jumlah'];
+
+        $stock->save(); // simpan ke tabel 
+        $request->session()->flash('info', "Data keranjang berhasil ditambah");
+        return redirect()->route('keranjang.index'); 
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\detail_belanja  $detail_belanja
+     * @param  \App\Models\keranjang  $keranjang
      * @return \Illuminate\Http\Response
      */
-    public function show(detail_belanja $detail_belanja)
+    public function show(keranjang $keranjang)
     {
         //
     }
@@ -54,10 +70,10 @@ class DetailBelanjaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\detail_belanja  $detail_belanja
+     * @param  \App\Models\keranjang  $keranjang
      * @return \Illuminate\Http\Response
      */
-    public function edit(detail_belanja $detail_belanja)
+    public function edit(keranjang $keranjang)
     {
         //
     }
@@ -66,10 +82,10 @@ class DetailBelanjaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\detail_belanja  $detail_belanja
+     * @param  \App\Models\keranjang  $keranjang
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, detail_belanja $detail_belanja)
+    public function update(Request $request, keranjang $keranjang)
     {
         //
     }
@@ -77,10 +93,10 @@ class DetailBelanjaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\detail_belanja  $detail_belanja
+     * @param  \App\Models\keranjang  $keranjang
      * @return \Illuminate\Http\Response
      */
-    public function destroy(detail_belanja $detail_belanja)
+    public function destroy(keranjang $keranjang)
     {
         //
     }

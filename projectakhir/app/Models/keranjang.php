@@ -5,11 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class detail_belanja extends Model
+class keranjang extends Model
 {
     use HasFactory;
-    
-    public function belanja(){
-        return $this->belongsTo('App\Models\belanja');
+    public function stock(){
+        return $this->belongsTo('App\Models\stock');
     }
 }

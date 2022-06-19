@@ -5,6 +5,7 @@ use App\Http\Controllers\StockController;
 use App\Http\Controllers\HubungiController;
 use App\Http\Controllers\BelanjaController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\KeranjangController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,5 +43,7 @@ Route::get('/tentang', function () {
     return view('tentang.index');
     
     });
+
+Route::resource('keranjang', KeranjangController::class);
 
 require __DIR__.'/auth.php';

@@ -18,8 +18,9 @@
             <div class="row">
                 <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12 main-content-area">
                     <div class="banner-shop">
-                        <a href="#" class="banner-link">
-                            <figure><img src="assets/images/tokoroti.jpg" width="1000"></figure>
+                        <a href="#" class="product-thumnail">
+                            <figure><img src="assets/images/tokoroti.jpg" width="1000" alt="Toko Roti R and B Bakery">
+                            </figure>
                         </a>
                     </div>
 
@@ -33,93 +34,49 @@
                     </div>
                     <!--end wrap shop control-->
 
-                    <!--Gambar List -->
+                    <!--Menampilkan Isi data Pada Stock yang dapat dijalankan utk belanja -->
                     <div class="row">
                         <ul class="product-list grid-products equal-container">
-                            <!--List 1 -->
-
-                            <ul class="product-list grid-products equal-container">
-                                <!--List 1 -->
-                                <li class="col-lg-4 col-md-6 col-sm-6 col-xs-6 ">
-                                    <div class="product product-style-3 equal-elem ">
-                                        <div class="product-thumnail">
-                                            <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                                <figure><img src="assets/images/rasa bagel.jpg"
-                                                        alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                                </figure>
-                                            </a>
-                                        </div>
-                                        <div class="product-info">
-                                            <tbody>
-                                                @foreach ($belanja as $item)
-                                                    <tr>
-                                                        <td>{{ $item->id }}</td>
-                                                        <td>{{ $item->stock->roti->nama_roti }}</td>
-                                                        <td>{{ $item->stock->roti->rasa_roti }}</td>
-                                                    </tr>
-                                                @endforeach
-                                            </tbody>
-                                            <a href="#" class="btn add-to-cart">Masukan Ke
-                                                Keranjang</a>
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <!--End List 1 -->
-
-                                {{-- <!--List 2 -->
                             <li class="col-lg-4 col-md-6 col-sm-6 col-xs-6 ">
                                 <div class="product product-style-3 equal-elem ">
-                                    <div class="product-thumnail">
-                                        <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                            <figure><img src="assets/images/rasa Croissant.jpg"
-                                                    alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                            </figure>
-                                        </a>
-                                    </div>
-                                    <div class="product-info">
-                                        <a href="#" class="product-name"><span>Roti
-                                                Croissant</span></a>
-                                        <div class="wrap-price"><span class="product-price">$250.00</span></div>
-                                        <a href="#" class="btn add-to-cart">Masukan Ke
-                                            Keranjang</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <!--End List 2 -->
 
-                            <!--List 3 -->
-                            <li class="col-lg-4 col-md-6 col-sm-6 col-xs-6 ">
-                                <div class="product product-style-3 equal-elem ">
-                                    <div class="product-thumnail">
-                                        <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                            <figure><img src="assets/images/rasa mufin.jpg"
-                                                    alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                            </figure>
-                                        </a>
-                                    </div>
                                     <div class="product-info">
-                                        <a href="#" class="product-name"><span>Roti mufin</span></a>
-                                        <div class="wrap-price"><span class="product-price">$250.00</span></div>
-                                        <a href="#" class="btn add-to-cart">Masukan Ke Keranjang</a>
+                                        <tbody>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    @foreach ($belanja as $stock)
+                                                        <div class=col-lg-4>
+                                                            <a href="detail.html" title="Roti bagel">
+                                                                <figure><img src="assets/images/rasa bagel.jpg"
+                                                                        alt="Roti Bagel">
+                                                                </figure>
+                                                            </a>
+                                                            <div>{{ $stock->roti->nama_roti }}
+                                                                {{ $stock->roti->rasa_roti }} {{ $stock->jumlah }}
+                                                                <br>{{ $stock->tanggal }}
+                                                            </div>
+                                                            <a href="#" class="btn add-to-cart">Masukan Ke
+                                                                Keranjang</a>
+                                                        </div>
+                                                    @endforeach
+                                                </div>
+                                            </div>
+                                        </tbody>
+
                                     </div>
                                 </div>
                             </li>
                         </ul>
-                        <!--End List 3 --> --}}
                     </div>
 
                     <!--Nomor banyak barang -->
                     <div class="wrap-pagination-info">
                         <ul class="page-numbers">
                             <li><span class="page-number-item current">1</span></li>
-                            <li><a class="page-number-item" href="#">2</a></li>
-                            <li><a class="page-number-item" href="#">3</a></li>
-                            <li><a class="page-number-item next-link" href="#">Next</a></li>
+                            <li class="result-count">Menampilkan Slide Pertama
+                            <li>
                         </ul>
-                        <p class="result-count">Showing 1-8 of 12 result</p>
                     </div>
-                    <!-- End Nomor banyak barang -->
 
                 </div>
                 <!--end main products area-->

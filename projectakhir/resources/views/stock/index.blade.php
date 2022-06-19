@@ -22,9 +22,18 @@
                 @foreach ($stock as $item)
                     <div class=col-lg-4>
                         <div><img src="assets/images/rasa bagel.jpg"></div>
-                        <div>{{ $item->roti->nama_roti }} {{ $item->roti->rasa_roti }} {{ $item->jumlah }}</div>
+                        <div>{{ $item->roti->nama_roti }} {{ $item->roti->rasa_roti }} {{ $item->jumlah }}
+                            <br>{{ $item->tanggal }}
+                        </div>
                         <center>
-                            <div><a href="#" class="btn add-to-cart">Masukan Ke Keranjang</a></div>
+                            <a href="{{ url('stock/' . $item->id) }}" class="btn btn-sm btn-primary">Tampil</a>
+                            <a href="{{ url('stock/' . $item->id . '/edit') }}" class="btn btn-sm btn-warning">Ubah</a>
+
+                            <a action="{{ url('stock/' . $item->id) }}" method="POST" id="formDelete">
+                                @method('DELETE')
+                                @csrf
+                                <button type="submit" class="btn btn-sm btn-danger">Ya, Hapus</button>
+                            </a>
                         </center>
                     </div>
                 @endforeach

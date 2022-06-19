@@ -16,9 +16,9 @@
 
                     <select name="stock_id" class="form-group">
                         <option value="">Pilih Nama Roti</option>
-                        @foreach($keranjang as $item)
-                        <option value="{{ $item->id }}">{{$item->stock->roti->nama_roti}}
-                            {{$item->stock->roti->rasa_roti}}
+                        @foreach($stock as $item)
+                        <option value="{{ $item->id }}">{{$item->roti->nama_roti}}
+                            {{$item->roti->rasa_roti}}
                         </option>
                         @endforeach
                     </select>

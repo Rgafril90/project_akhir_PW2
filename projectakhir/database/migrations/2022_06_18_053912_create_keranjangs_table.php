@@ -13,10 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('detail_belanjas', function (Blueprint $table) {
+        Schema::create('keranjangs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('belanja_id');
-            $table->foreignId('roti_id') -> constrained()->onDelete('restrict') -> onUpdate('restrict');
+            $table->foreignId('stock_id') -> constrained()->onDelete('restrict') -> onUpdate('restrict');
             $table->string('jumlah');
             $table->timestamps();
         });
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('detail_belanjas');
+        Schema::dropIfExists('keranjangs');
     }
 };

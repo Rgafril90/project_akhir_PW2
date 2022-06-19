@@ -26,6 +26,7 @@
                             <br>{{ $item->tanggal }}
                         </div>
                         <center>
+
                             <a href="{{ url('stock/' . $item->id) }}" class="btn btn-sm btn-primary">Tampil</a>
                             <a href="{{ url('stock/' . $item->id . '/edit') }}" class="btn btn-sm btn-warning">Ubah</a>
 

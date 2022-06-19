@@ -62,7 +62,7 @@ class StockController extends Controller
         $stock -> tanggal = $validateData['tanggal'];
         $stock -> foto = $rename_file;
 
-        $stock->save(); // simpan ke tabel prodis
+        $stock->save(); // simpan ke tabel
         $request->session()->flash('info', "Data Stock berhasil ditambah");
         return redirect()->route('stock.index'); 
     }

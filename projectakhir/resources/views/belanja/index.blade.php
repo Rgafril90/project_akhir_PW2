@@ -27,47 +27,52 @@
                     <div class="wrap-shop-control">
 
                         <h1 class="shop-title">Pilihan Rasa</h1>
+                        {{-- <div class="row">
+                            @foreach ($belanja as $stock)
+                                <div class=col-lg-4>
+                                    <a href="detail.html" title="Roti bagel">
+                                        <figure><img src="assets/images/rasa bagel.jpg" alt="Roti Bagel">
+                                        </figure>
+                                    </a>
+                                    <div>{{ $stock->roti->nama_roti }}
+                                        {{ $stock->roti->rasa_roti }} {{ $stock->jumlah }}
+                                        <br>{{ $stock->tanggal }}
+                                    </div>
+                                    <a href="#" class="btn add-to-cart">Masukan Ke
+                                        Keranjang</a>
+                                </div>
+                            @endforeach
+                        </div> --}}
 
-                        <div class="wrap-right">
-                        </div>
 
                     </div>
                     <!--end wrap shop control-->
 
                     <!--Menampilkan Isi data Pada Stock yang dapat dijalankan utk belanja -->
-                    <div class="row">
-                        <ul class="product-list grid-products equal-container">
-                            <li class="col-lg-4 col-md-6 col-sm-6 col-xs-6 ">
-                                <div class="product product-style-3 equal-elem ">
-
-                                    <div class="product-info">
-                                        <tbody>
-                                            <div class="card-body">
-                                                <div class="row">
-                                                    @foreach ($belanja as $stock)
-                                                        <div class=col-lg-4>
-                                                            <a href="detail.html" title="Roti bagel">
-                                                                <figure><img src="assets/images/rasa bagel.jpg"
-                                                                        alt="Roti Bagel">
-                                                                </figure>
-                                                            </a>
-                                                            <div>{{ $stock->roti->nama_roti }}
-                                                                {{ $stock->roti->rasa_roti }} {{ $stock->jumlah }}
-                                                                <br>{{ $stock->tanggal }}
-                                                            </div>
-                                                            <a href="#" class="btn add-to-cart">Masukan Ke
-                                                                Keranjang</a>
-                                                        </div>
-                                                    @endforeach
-                                                </div>
+                    <div class="product-info">
+                        <tbody>
+                            <div class="card-body">
+                                <div class="row">
+                                    @foreach ($stock as $item)
+                                        <div class=col-lg-4>
+                                            <a href="detail.html" title="Roti bagel">
+                                                <figure><img src="assets/images/rasa bagel.jpg" alt="Roti Bagel">
+                                                </figure>
+                                            </a>
+                                            <div>{{ $item->roti->nama_roti }}
+                                                {{ $item->roti->rasa_roti }} {{ $item->jumlah }}
+                                                <br>{{ $item->tanggal }}
                                             </div>
-                                        </tbody>
-
-                                    </div>
+                                            <center><a href="#" class="btn add-to-cart">Masukan Ke
+                                                    Keranjang</a></center>
+                                        </div>
+                                    @endforeach
                                 </div>
-                            </li>
-                        </ul>
+                            </div>
+                        </tbody>
+
                     </div>
+
 
                     <!--Nomor banyak barang -->
                     <div class="wrap-pagination-info">
@@ -114,10 +119,10 @@
                                         <span>(Meses Campur)</span></a>
                                 </li>
                                 <li class="list-item"><a class="filter-link " href="#">Roti Bagel
-                                        <span>(Meses Stroberi)</span></a>
+                                        <span>(Stroberi)</span></a>
                                 </li>
                                 <li class="list-item"><a class="filter-link " href="#">Roti Bagel
-                                        <span>(Meses Melon)</span></a>
+                                        <span>(Melon)</span></a>
                                 </li>
                                 <li class="list-item"><a class="filter-link " href="#">Roti Bagel
                                         <span>(Meses Coklat)</span></a>

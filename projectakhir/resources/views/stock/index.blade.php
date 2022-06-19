@@ -24,7 +24,16 @@
                 <div><img src="{{ asset('storage/'.$item->foto) }}" alt="Logo" width="300px"></div>
                 <div>{{ $item->roti->nama_roti }} {{ $item->roti->rasa_roti }} {{ $item->jumlah }}</div>
                 <center>
-                    <div><a href="#" class="btn add-to-cart">Masukan Ke Keranjang</a></div>
+                    <div>
+                        <a href="{{ url('stock/' . $item->id) }}" class="btn btn-sm btn-primary">Tampil</a>
+                        <a href="{{ url('stock/' . $item->id . '/edit') }}" class="btn btn-sm btn-warning">Ubah</a>
+
+                        <form action="{{url('stock/'.$item->id)}}" method="POST" id="formDelete">
+                            @method('DELETE')
+                            @csrf
+                            <button type="submit" class="btn btn-outline-light">Ya, Hapus</button>
+                        </form>
+                    </div>
                 </center>
             </div>
             @endforeach

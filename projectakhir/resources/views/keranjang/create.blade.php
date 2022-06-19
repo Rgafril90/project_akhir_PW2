@@ -12,17 +12,18 @@
                 @csrf
 
                 <div class="form-group">
-                    <label for="roti_id">Nama Roti</label>
+                    <label for="stock_id">Nama Roti</label>
 
-                    <select name="roti_id" class="form-group">
+                    <select name="stock_id" class="form-group">
                         <option value="">Pilih Nama Roti</option>
-                        @foreach($stock as $item)
-                        <option value="{{ $item->id }}">{{$item->roti->nama_roti}} {{$item->roti->rasa_roti}}
+                        @foreach($keranjang as $item)
+                        <option value="{{ $item->id }}">{{$item->stock->roti->nama_roti}}
+                            {{$item->stock->roti->rasa_roti}}
                         </option>
                         @endforeach
                     </select>
 
-                    @error('roti_id')
+                    @error('stock_id')
                     <div class="text-danger">{{$message}}</div>
                     @enderror
                 </div>
@@ -33,24 +34,6 @@
 
                     @error('jumlah')
                     <div class="text-danger">{{ $message }}</div>
-                    @enderror
-                </div>
-
-                <div class="form-group">
-                    <label for="foto">Gambar Roti</label>
-                    <input type="file" class="form-control" name="foto">
-
-                    {{-- <select name="foto" class="form-group">
-                        @foreach($roti as $item)
-                        <input type="file" class="form-control" name="foto">
-                        <option value="{{ $item->id}}">{{ $item->foto}}
-                        </option>
-                        {{ $item->foto}}
-                        @endforeach
-                    </select> --}}
-
-                    @error('foto')
-                    <div class="text-danger">{{$message}}</div>
                     @enderror
                 </div>
 

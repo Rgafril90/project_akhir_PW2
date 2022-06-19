@@ -47,7 +47,7 @@ class StockController extends Controller
             'jumlah' => 'required',
             'tanggal' => 'required'
         ]);
-
+        
         //extensi
         $ext = $request->foto->getClientOriginalExtension();
         //ubah nama

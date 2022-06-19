@@ -51,7 +51,7 @@ class KeranjangController extends Controller
         $keranjang->stock_id = $validateData['stock_id'];
         $keranjang->jumlah = $validateData['jumlah'];
 
-        $stock->save(); // simpan ke tabel 
+        $keranjang->save(); // simpan ke tabel 
         $request->session()->flash('info', "Data keranjang berhasil ditambah");
         return redirect()->route('keranjang.index'); 
     }

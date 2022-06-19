@@ -33,6 +33,9 @@
                     </div>
                     <div class="product-name">
                         <a class="link-to-product" href="#">{{ $item->stock->roti->nama_roti }}</a>
+                        <a class="link-to-product" href="#">{{ $item->stock->roti->rasa_roti }}</a>
+                        <a class="link-to-product" href="#">{{ $item->jumlah }}</a>
+
                     </div>
 
                     <div class="delete">

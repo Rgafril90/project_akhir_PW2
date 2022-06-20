@@ -34,35 +34,29 @@
                 <!--end wrap shop control-->
 
                 <!--Gambar List -->
-                <div class="row">
-                    <ul class="product-list grid-products equal-container">
-                        <!--List 1 -->
-                        <li class="col-lg-4 col-md-6 col-sm-6 col-xs-6 ">
-                            <div class="product product-style-3 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="assets/images/rasa bagel.jpg"
-                                                alt="T-Shirt Raw Hem Organic Boro Constrast Denim">
+                <!--Menampilkan Isi data Pada Stock yang dapat dijalankan utk belanja -->
+                <div class="product-info">
+                    <tbody>
+                        <div class="card-body">
+                            <div class="row">
+                                @foreach ($stock as $item)
+                                <div class=col-lg-4>
+                                    <a href="detail.html" title="Roti bagel">
+                                        <figure><img src="assets/images/rasa bagel.jpg" alt="Roti Bagel">
                                         </figure>
                                     </a>
+                                    <div>{{ $item->roti->nama_roti }}
+                                        {{ $item->roti->rasa_roti }} {{ $item->jumlah }}
+                                        <br>{{ $item->tanggal }}
+                                    </div>
+                                    <center><a href="#" class="btn add-to-cart">Masukan Ke
+                                            Keranjang</a></center>
                                 </div>
-                                <div class="product-info">
-                                    <tbody>
-                                        @foreach ($belanja as $item)
-                                        <tr>
-                                            <td>{{ $item->id }}</td>
-                                            <td>{{ $item->stock->roti->nama_roti }}</td>
-                                            <td>{{ $item->stock->roti->rasa_roti }}</td>
-                                        </tr>
-                                        @endforeach
-                                    </tbody>
-                                    <a href="#" class="btn add-to-cart">Masukan Ke
-                                        Keranjang</a>
-                                </div>
+                                @endforeach
                             </div>
-                        </li>
+                        </div>
+                    </tbody>
 
-                        <!--End List 1 -->
                 </div>
 
                 <!--Nomor banyak barang -->

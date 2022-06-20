@@ -13,12 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pembelis', function (Blueprint $table) {
+        Schema::create('checkouts', function (Blueprint $table) {
             $table->id();
-            $table->string('Nama');
+            $table->foreignId('keranjang_id')->constrained()->onDelete('restrict')->onUpdate('restrict');
+            $table->String('nama');
+            $table->string('email');
+            $table->string('noHp');
             $table->string('alamat');
-            $table->char('Gmail');
-            $table->char('No_telp');
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pembelis');
+        Schema::dropIfExists('checkouts');
     }
 };

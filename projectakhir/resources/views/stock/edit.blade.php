@@ -64,7 +64,7 @@
             </div>
 
             <div class="form-group">
-                <label for="tanggal">Nama Studi</label>
+                <label for="tanggal">Tanggal</label>
                 <input type="date" class="form-control" name="tanggal" placeholder="Ubah Tanggal Product"
                     value="{{ old('tanggal') ?? $stock->tanggal }}">
 

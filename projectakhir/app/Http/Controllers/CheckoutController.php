@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\checkout;
 use App\Models\keranjang;
-use App\Models\stock;
 use Illuminate\Http\Request;
 
-class KeranjangController extends Controller
+class CheckoutController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,9 @@ class KeranjangController extends Controller
     public function index()
     {
         //
+        $checkout = checkout::all();
         $keranjang = keranjang::all();
-        return view('keranjang.index')->with('keranjang',$keranjang);
+        return view('checkout.index')->with('checkout',$checkout)->with('keranjang',$keranjang);
     }
 
     /**
@@ -28,8 +29,6 @@ class KeranjangController extends Controller
     public function create()
     {
         //
-        $stock = stock::all();
-        return view('keranjang.create')->with('stock',$stock);
     }
 
     /**
@@ -40,29 +39,34 @@ class KeranjangController extends Controller
      */
     public function store(Request $request)
     {
-        // validate data 
-        $validateData = $request->validate([
-            'stock_id' => 'required',
-            'jumlah' => 'required'
+         //validate input data kosong
+         $validateData = $request->validate([
+            'keranjang_id' =>'required',
+            'nama'=>'required',
+            'email'=>'required',
+            'noHp' => 'required',
+            'alamat' => 'required'
         ]);
 
-        //simpan data 
-        $keranjang = new keranjang();
-        $keranjang->stock_id = $validateData['stock_id'];
-        $keranjang->jumlah = $validateData['jumlah'];
+        //simpan
+        $checkout = new checkout();
+        $checkout -> keranjang_id = $validateData['keranjang_id'];
+        $checkout -> nama = $validateData['nama'];
+        $checkout -> email = $validateData['email'];
+        $checkout -> noHp = $validateData['noHp'];
+        $checkout -> alamat = $validateData['alamat'];
 
-        $keranjang->save(); // simpan ke tabel 
-        $request->session()->flash('info', "Data keranjang berhasil ditambah");
-        return redirect()->route('keranjang.index'); 
+        $checkout->save();
+        return redirect()->route('checkout.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\keranjang  $keranjang
+     * @param  \App\Models\checkout  $checkout
      * @return \Illuminate\Http\Response
      */
-    public function show(keranjang $keranjang)
+    public function show(checkout $checkout)
     {
         //
     }
@@ -70,10 +74,10 @@ class KeranjangController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\keranjang  $keranjang
+     * @param  \App\Models\checkout  $checkout
      * @return \Illuminate\Http\Response
      */
-    public function edit(keranjang $keranjang)
+    public function edit(checkout $checkout)
     {
         //
     }
@@ -82,10 +86,10 @@ class KeranjangController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\keranjang  $keranjang
+     * @param  \App\Models\checkout  $checkout
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, keranjang $keranjang)
+    public function update(Request $request, checkout $checkout)
     {
         //
     }
@@ -93,14 +97,11 @@ class KeranjangController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\keranjang  $keranjang
+     * @param  \App\Models\checkout  $checkout
      * @return \Illuminate\Http\Response
      */
-    public function destroy(keranjang $keranjang)
+    public function destroy(checkout $checkout)
     {
         //
-        $keranjang->delete();
-        return redirect()->route('keranjang.index')->with("info", " $keranjang->stock_id berhasil dihapus");
-
     }
 }

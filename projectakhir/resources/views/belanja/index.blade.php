@@ -42,14 +42,14 @@
                                 @foreach ($stock as $item)
                                 <div class=col-lg-4>
                                     <a href="detail.html" title="Roti bagel">
-                                        <figure><img src="assets/images/rasa bagel.jpg" alt="Roti Bagel">
+                                        <figure><img src="{{ asset('storage/'.$item->foto) }}" alt="Logo" width="300px">
                                         </figure>
                                     </a>
                                     <div>{{ $item->roti->nama_roti }}
                                         {{ $item->roti->rasa_roti }} {{ $item->jumlah }}
                                         <br>{{ $item->tanggal }}
                                     </div>
-                                    <center><a href="#" class="btn add-to-cart">Masukan Ke
+                                    <center><a href="{{ url('keranjang') }}" class="btn add-to-cart">Masukan Ke
                                             Keranjang</a></center>
                                 </div>
                                 @endforeach

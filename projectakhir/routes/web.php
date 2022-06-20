@@ -6,6 +6,7 @@ use App\Http\Controllers\HubungiController;
 use App\Http\Controllers\BelanjaController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KeranjangController;
+use App\Http\Controllers\CheckoutController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,17 +34,13 @@ Route::resource('hubungi', HubungiController::class );
 
 Route::resource('belanja', BelanjaController::class);
 
-Route::get('/checkout', function () {
-    return view('checkout.index');
-                
-    });
-
+Route::resource('checkout', CheckoutController::class);
 
 Route::get('/tentang', function () {
     return view('tentang.index');
     
     });
-
+    
 Route::resource('keranjang', KeranjangController::class);
 
 require __DIR__.'/auth.php';

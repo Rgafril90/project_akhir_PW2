@@ -22,9 +22,15 @@
             <div class="box-titl">
                 <a href="{{ url('keranjang/create') }}" class="btn btn-primary">Tambah</a>
             </div>
+
+            @if (session()->has('info'))
+            <div class="alert alert-success">
+                {{ session()->get('info') }}
+            </div>
+            @endif
+
             <ul class="products-cart">
                 <li class="pr-cart-item">
-
 
                     {{-- Awal Foreach --}}
                     @foreach($keranjang as $item)
@@ -32,20 +38,31 @@
                         <img src="{{ asset('storage/'.$item->stock->foto) }}" alt="Logo" width="100px">
                     </div>
                     <div class="product-name">
-                        <a class="link-to-product" href="#">{{ $item->stock->roti->nama_roti }}</a>
-                        <a class="link-to-product" href="#">{{ $item->stock->roti->rasa_roti }}</a>
-                        <a class="link-to-product" href="#">{{ $item->jumlah }}</a>
-
+                        <td class="link-to-product">{{ $item->stock->roti->nama_roti }}</td>
+                        <td class="link-to-product"> Rasa {{ $item->stock->roti->rasa_roti }} </td>
+                        <div>
+                            <td class="link-to-product">Jumlah {{ $item->jumlah }}</td>
+                        </div>
                     </div>
 
-                    <div class="delete">
+                    {{-- <div class="delete">
                         <a href="#" class="btn btn-delete" title="">
                             <span>Delete from your cart</span>
                             <i class="fa fa-times-circle" aria-hidden="true"></i>
                         </a>
-                    </div>
+                    </div> --}}
+
+                    <form action="{{url('keranjang/'.$item->id)}}" method="POST" id="formDelete">
+                        @method('DELETE')
+                        @csrf
+                        <button type="submit" class="btn btn-outline-light"><i class="fa fa-times-circle"
+                                aria-hidden="true"></i></button>
+                    </form>
+
                     @endforeach
                 </li>
+
+
 
             </ul>
         </div>

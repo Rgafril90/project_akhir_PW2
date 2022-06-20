@@ -55,8 +55,7 @@
 
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
-                                    <x-responsive-nav-link :href="route('logout')"
-                                        onclick="event.preventDefault();
+                                    <x-responsive-nav-link :href="route('logout')" onclick="event.preventDefault();
                                     this.closest('form').submit();">
                                         <img src="{{ asset('assets/images/LogoLogOut.jpg') }}" alt="mercado">
                                         {{ __('Log Out') }}
@@ -65,7 +64,7 @@
 
 
                                 {{-- <li class="menu-item"><a title="Register or Login" href="login.html">Masuk</a></li>
-                                <li class="menu-item"><a title="Register or Login" href="register.html">Daftar</a> 
+                                <li class="menu-item"><a title="Register or Login" href="register.html">Daftar</a>
                                 </li> --}}
 
                                 <li class="menu-item lang-menu menu-item-has-children parent">
@@ -129,8 +128,8 @@
                         <!--Nama User dan Email User-->
                         <div class="wrap-icon right-section">
                             <div class="menu-item lang-menu menu-item-has-children parent">
-                                <p href="#" class="d-block"> <img
-                                        src="{{ asset('assets/images/LogoUser.jpg') }}" alt="mercado">
+                                <p href="#" class="d-block"> <img src="{{ asset('assets/images/LogoUser.jpg') }}"
+                                        alt="mercado">
                                     {{ Auth::user()->name }}
                                     <br>{{ Auth::user()->email }}
                                 </p>
@@ -314,8 +313,8 @@
                                                         class="fa fa-pinterest" aria-hidden="true"></i></a></li>
                                             <li><a href="#" class="link-to-item" title="instagram"><i
                                                         class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                            <li><a href="#" class="link-to-item" title="vimeo"><i
-                                                        class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+                                            <li><a href="#" class="link-to-item" title="vimeo"><i class="fa fa-vimeo"
+                                                        aria-hidden="true"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>

@@ -28,7 +28,7 @@ Route::get('/', function () {
 
 Route::resource('dashboard', DashboardController::class)->middleware(['auth']);
 
-Route::resource('stock', StockController::class );
+Route::resource('stock', StockController::class )->middleware(['auth']);
 
 Route::resource('hubungi', HubungiController::class );
 

@@ -41,10 +41,12 @@ class StockPolicy
      */
     public function create(User $user)
     {
-        return in_array($user->email, [
-            'boy@gmail.com',
-            'riganda@gmai.com'
-        ]);
+        // return in_array($user->email, [
+        //     'boy@gmail.com',
+        //     'riganda@gmail.com'
+        // ]);
+
+        return $user->email === 'Rigandas@gmail.com';
     }
 
     /**

@@ -67,7 +67,6 @@
                                     {{-- //Input Data End --}}
 
                                     <button type="submit" class="btn btn-primary">Simpan</button>
-
                                 </form>
                                 <!--Nomor Halaman -->
                                 <div class="wrap-pagination-info">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\checkout;
 use App\Models\keranjang;
+use App\Models\order;
 use Illuminate\Http\Request;
 
 class CheckoutController extends Controller
@@ -39,9 +40,11 @@ class CheckoutController extends Controller
      */
     public function store(Request $request)
     {
+        //jika ingnin melihat data apakah masuk atau tidak 
+        // dd($request);
+        
          //validate input data kosong
          $validateData = $request->validate([
-            'keranjang_id' =>'required',
             'nama'=>'required',
             'email'=>'required',
             'noHp' => 'required',
@@ -50,13 +53,16 @@ class CheckoutController extends Controller
 
         //simpan
         $checkout = new checkout();
-        $checkout -> keranjang_id = $validateData['keranjang_id'];
-        $checkout -> nama = $validateData['nama'];
+        $checkout -> nama = $validateData['nama']   ;
         $checkout -> email = $validateData['email'];
         $checkout -> noHp = $validateData['noHp'];
         $checkout -> alamat = $validateData['alamat'];
 
         $checkout->save();
+
+        // ambil id checkout 
+        
+        // ambil keranjnag_id 
         return redirect()->route('checkout.index');
     }
 

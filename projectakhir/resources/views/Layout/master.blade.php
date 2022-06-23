@@ -87,7 +87,7 @@
 
                         <div class="wrap-logo-top left-section">
                             <a href="index.html" class="link-to-home"><img
-                                    src="{{ asset('assets/images/LogoToko.jpeg') }}" alt="mercado"></a>
+                                    src="{{ asset('assets/images/LogoToko.jpeg') }}" alt="logo"></a>
                         </div>
 
                         <!-- Search -->
@@ -145,7 +145,7 @@
                     <div class="container">
                         <ul class="nav primary clone-main-menu" id="mercado_main" data-menuname="Main menu">
                             <li class="menu-item home-icon">
-                                <a href="{{ url('') }}" class="nav-link"><i class="fa fa-home"></i></a>
+                                <a href="{{ url('dashboard') }}" class="nav-link"><i class="fa fa-home"></i></a>
                             </li>
                             <li class="menu-item current ">
                                 <a href="{{ url('belanja') }}" class="nav-link ">Belanja</a>

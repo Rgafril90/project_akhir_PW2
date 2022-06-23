@@ -11,4 +11,5 @@ class keranjang extends Model
     public function stock(){
         return $this->belongsTo('App\Models\stock');
     }
+    
 }

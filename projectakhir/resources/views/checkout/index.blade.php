@@ -83,6 +83,12 @@
 
                     <button type="submit" class="btn btn-primary">Simpan</button>
 
+                    <div class="wrap-pagination-info">
+                        <ul class="page-numbers">
+                            <li><span class="page-number-item current">4</span></li>
+                            <li class="result-count">Menampilkan Slide Checkout</li>
+                        </ul>
+                    </div>
                 </div>
                 <!--end main content area-->
         </div>

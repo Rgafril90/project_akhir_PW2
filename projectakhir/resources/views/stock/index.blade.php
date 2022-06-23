@@ -36,6 +36,12 @@
             </div>
             @endforeach
         </div>
+        <div class="wrap-pagination-info">
+            <ul class="page-numbers">
+                <li><span class="page-number-item current">3</span></li>
+                <li class="result-count">Menampilkan Slide Stock</li>
+            </ul>
+        </div>
     </div>
 </div>
 

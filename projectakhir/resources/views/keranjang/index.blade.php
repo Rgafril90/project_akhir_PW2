@@ -32,18 +32,21 @@
             <ul class="products-cart">
                 <li class="pr-cart-item">
 
-                    {{-- Awal Foreach --}}
-                    @foreach($keranjang as $item)
-                    <div class="product-image">
-                        <img src="{{ asset('storage/'.$item->stock->foto) }}" alt="Logo" width="100px">
-                    </div>
-                    <div class="product-name">
-                        <td class="link-to-product">{{ $item->stock->roti->nama_roti }}</td>
-                        <td class="link-to-product"> Rasa {{ $item->stock->roti->rasa_roti }} </td>
-                        <div>
-                            <td class="link-to-product">Jumlah {{ $item->jumlah }}</td>
+                    {{-- Data --}}
+                    <form action="">
+                        @foreach($keranjang as $item)
+                        <div class="product-image">
+                            <img src="{{ asset('storage/'.$item->stock->foto) }}" alt="Logo" width="100px">
                         </div>
-                    </div>
+                        <div class="product-name">
+                            <td class="link-to-product">{{ $item->stock->roti->nama_roti }}</td>
+                            <td class="link-to-product"> Rasa {{ $item->stock->roti->rasa_roti }} </td>
+                            <div>
+                                <td class="link-to-product">Jumlah {{ $item->jumlah }}</td>
+                            </div>
+
+                        </div>
+                    </form>
 
                     {{-- <div class="delete">
                         <a href="#" class="btn btn-delete" title="">
@@ -75,7 +78,12 @@
                 <a class="link-to-shop" href="shop.html">Continue Shopping<i class="fa fa-arrow-circle-right"
                         aria-hidden="true"></i></a>
             </div>
-
+        </div>
+        <div class="wrap-pagination-info">
+            <ul class="page-numbers">
+                <li><span class="page-number-item current">7</span></li>
+                <li class="result-count">Menampilkan Slide Keranjang</li>
+            </ul>
         </div>
 
     </div>
